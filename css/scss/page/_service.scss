@@ -1,0 +1,28 @@
+.service{
+  position: relative;
+  background-color: $subColor;
+  &::before{
+    content: "";
+    position: absolute;
+    top: 80px;
+    border-right: 100vw solid $mainColor;
+    border-bottom: 200px solid $subColor;
+  }
+  &-wrapper{
+    position: relative;
+    margin: 140px 0 100px;
+    &::before{
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      border-left: 100vw solid $mainColor;
+      border-top: 200px solid $subColor;
+    }
+  }
+  &-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+}

@@ -327,6 +327,11 @@ img {
   vertical-align: bottom;
 }
 
+body {
+  font-family: "Arial", "ヒラギノ明朝 ProN", sans-serif;
+  color: #ffffff;
+}
+
 .inner {
   position: relative;
   padding: 0px 24px;
@@ -335,32 +340,475 @@ img {
   margin: 0 auto;
 }
 
-.top {
-  height: 100vh;
-  width: 100%;
-}
-
-.top-wrapper {
-  width: 100%;
-  height: 100%;
-}
-
 .top-logo {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: "Didot";
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.top-logo-title {
+  font-family: "Baskerville";
+  font-size: 80px;
+  font-size: 5rem;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.top-logo-sbtitle {
+  font-size: 30px;
+  font-size: 1.875rem;
+  color: #000;
+}
+
+.top-logo-text {
+  font-size: 24px;
+  font-size: 1.5rem;
+  color: #000;
 }
 
 .top-text {
   position: absolute;
   writing-mode: vertical-rl;
-  left: 0;
+  left: 100px;
   top: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+
+.top-text p {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+.top-text p::before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: -40px;
+  right: 2px;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to top, white, rgba(255, 255, 255, 0.1));
+  animation: fallLight 1.5s linear 0s infinite;
+}
+
+@keyframes fallLight {
+  0% {
+    top: -40px;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 80px;
+  background-color: #333333;
+}
+
+.banner-title {
+  font-size: 80px;
+  font-size: 5rem;
+  font-family: "Painted Brush Slant";
+  opacity: 0.3;
+  letter-spacing: 40px;
+}
+
+.banner-text {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-family: "凸版文久見出しゴシック";
+  position: absolute;
+  bottom: 0;
+  letter-spacing: 20px;
+}
+
+.banner-title-about, .banner-title-work {
+  text-align: right;
+}
+
+.banner-title-service, .banner-title-contact {
+  text-align: left;
+}
+
+.banner-text-about, .banner-text-work {
+  right: 15%;
+}
+
+.banner-text-service, .banner-text-contact {
+  left: 15%;
+}
+
+.service-item {
+  background-color: #fff;
+  color: #555;
+  box-shadow: 0px 0px 20px 0px;
+  position: relative;
+  width: 30%;
+  padding: 40px 10px 20px;
+}
+
+.service-item-logo {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-size: 1.875rem;
+  background-color: #fff;
+}
+
+.service-item-title {
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.work-item {
+  display: block;
+  margin: 10px;
+  width: calc( 33% - 20px);
+}
+
+.work-item-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.work-item-wrapper img {
+  width: 100%;
+  height: auto;
+}
+
+.work-item:hover .overlay {
+  opacity: 0.8;
+  transform: scale(1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top left, #f6b483, #ff3333);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  background-color: #333333;
+  font-weight: 900;
+}
+
+.btn {
+  position: relative;
+  width: 250px;
+  height: 50px;
+  overflow: hidden;
+  line-height: 50px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+}
+
+.btn a {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn::before, .btn::after,
+.btn a::before,
+.btn a::after {
+  content: "";
+  position: absolute;
+  background: #ff3333;
+}
+
+.btn::before {
+  bottom: 0;
+  left: -50px;
+  width: 50px;
+  height: 1px;
+  animation: leftAnim 1.5s linear 0s infinite;
+}
+
+.btn::after {
+  bottom: -50px;
+  right: 0;
+  width: 1px;
+  height: 50px;
+  animation: bottomAnim 1.5s linear 1.2s infinite;
+}
+
+.btn a::before {
+  top: 0;
+  right: -50px;
+  width: 50px;
+  height: 1px;
+  animation: rightAnim 1.5s linear 0s infinite;
+}
+
+.btn a::after {
+  top: -50px;
+  left: 0;
+  width: 1px;
+  height: 50px;
+  animation: topAnim 1.5s linear 1.2s infinite;
+}
+
+@keyframes leftAnim {
+  0% {
+    left: -50px;
+  }
+  100% {
+    left: 250px;
+  }
+}
+
+@keyframes rightAnim {
+  0% {
+    right: -50px;
+  }
+  100% {
+    right: 250px;
+  }
+}
+
+@keyframes bottomAnim {
+  0% {
+    bottom: -50px;
+  }
+  100% {
+    bottom: 250px;
+  }
+}
+
+@keyframes topAnim {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: 250px;
+  }
+}
+
+.btn :hover {
+  background: linear-gradient(to top left, #f6b483, #ff3333);
+}
+
+.btn :hover ::before,
+.btn :hover ::after,
+.btn :hover a::before,
+.btn :hover a::after {
+  animation: none;
+}
+
+.top {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.top-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .top-video {
   width: 100%;
+  height: 110%;
+  object-fit: cover;
+  object-position: center;
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #333333;
+}
+
+header .header-pc {
+  display: flex;
+  justify-content: space-between;
   height: 100%;
+}
+
+header .header-pc-logo img {
+  height: 100%;
+}
+
+header .header-list {
+  display: flex;
+}
+
+header .header-list-item a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+header .header-list-item + .header-list-item {
+  margin-left: 10px;
+}
+
+.about {
+  background-image: url(../img/about-pc.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.about-text {
+  background-color: #fff;
+  color: #555;
+  box-shadow: 0px 0px 20px 0px;
+  padding: 40px 20px 40px 40px;
+  width: 450px;
+  margin: 50px 0 50px auto;
+  transform: translateY(110px);
+}
+
+.about-text-wrap {
+  margin-bottom: 40px;
+}
+
+.about-text-wrap h3 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.about-text-wrap h3 b {
+  font-size: 16px;
+  font-size: 1rem;
+  font-family: "Zapfino";
+  color: #ff3333;
+}
+
+.about-text-wrap h3 i {
+  padding-right: 10px;
+  color: #f6b483;
+}
+
+.about-text-wrap p {
+  margin-bottom: 20px;
+}
+
+.about .skils-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about .skils-wrap-box {
+  width: calc(25% - 20px);
+  margin: 0 10px 30px;
+  text-align: center;
+}
+
+.service {
+  position: relative;
+  background-color: #cccccc;
+}
+
+.service::before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  border-right: 100vw solid #333333;
+  border-bottom: 200px solid #cccccc;
+}
+
+.service-wrapper {
+  position: relative;
+  margin: 140px 0 100px;
+}
+
+.service-wrapper::before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  border-left: 100vw solid #333333;
+  border-top: 200px solid #cccccc;
+}
+
+.service-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.work {
+  background-color: #333333;
+}
+
+.work-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 0;
+}
+
+.contact {
+  background-color: #333333;
+  padding-bottom: 100px;
+}
+
+.contact-text {
+  text-align: center;
+  padding: 80px 0;
+  margin-top: 40px;
+}
+
+footer {
+  background-color: #cccccc;
+  width: 100%;
+  padding: 40px 0;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #555;
+}
+
+footer .sns-container {
+  padding-bottom: 20px;
 }

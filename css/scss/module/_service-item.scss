@@ -1,0 +1,29 @@
+.service-item{
+  @include card;
+  position: relative;
+  width: 30%;
+  padding: 40px 10px 20px;
+  &-logo{
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font(30);
+    background-color: $cardColor;
+  }
+  &-title{
+    text-align: center;
+    padding-bottom: 10px;
+    @include font(20);
+  }
+  &-text{
+
+  }
+}

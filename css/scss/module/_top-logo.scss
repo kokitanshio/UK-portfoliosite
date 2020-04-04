@@ -1,0 +1,29 @@
+.top-logo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: $logoSubFont;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &-title{
+    font-family: $logoTopFont;
+    @include font(80);
+    font-weight: normal;
+    color: rgba(255,255,255,0.8);
+  }
+  &-sbtitle{
+    @include font(30);
+    color: #000;
+  }
+  &-text{
+    @include font(24);
+    color: #000;
+  }
+}

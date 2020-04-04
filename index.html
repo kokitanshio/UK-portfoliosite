@@ -13,6 +13,9 @@
 	<meta property="og:description" content="">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="img/favicon.png">
+  <!--fontawsom-->
+  <link href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" rel="stylesheet">
+  <!--fontawsom-->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,16 +26,16 @@
   
       <!--top-logoここから-->
       <div class="top-logo">
-        <h1 class="top-logo-titile">UK</h1>
+        <h1 class="top-logo-title">UK</h1>
         <p class="top-logo-sbtitle">PORTFOLIO</p>
         <div class="top-logo-text">Web Create Service</div>
       </div>
       <!--top-logoここまで-->
 
       <div class="top-text">
-        どこかの誰かではない<br>
-        あなたのための<br>
-        WEB制作をお手伝いします
+        <p>どこかの誰かではない</p>
+        <p>あなたのための</p>
+        <p>WEB制作をお手伝いします。</p>
       </div>
     </div>
   </section>
@@ -42,14 +45,15 @@
   <header>
     <!--pc用headerここから-->
     <nav class="inner header-pc">
-      <div class="header-nav-logo">
-        <a href="#"><img src="img/logo.png" alt=""></a>
+      <div class="header-pc-logo">
+        <a href="#"></a>
       </div>
       <ul class="header-list">
-        <li class="header-list-item"><a href="#about">ABOUT</a></li>
-        <li class="header-list-item"><a href="#service">SERVICE</a></li>
         <li class="header-list-item"><a href="#work">WORK</a></li>
+        <li class="header-list-item"><a href="#service">SERVICE</a></li>
+        <li class="header-list-item"><a href="#about">ABOUT</a></li>
         <li class="header-list-item"><a href="#contact">CONTACT</a></li>
+        <li class="header-list-item"><a href="https://twitter.com/tanshiokoki73"><i class="fab fa-twitter"></i></a></li>
       </ul>
     </nav>
     <!--pc用headerここまで-->
@@ -58,137 +62,231 @@
   </header>
   <!--ヘッダーここまで-->
 
-  <!--アバウトここから-->
-  <section id="about" class="about">
-    <div class="inner">
+    <!--ワークここから-->
+    <section id="work" class="work">
       <!--タイトルバナーここから-->
       <div class="banner">
-        <h2 class="banner-title">ABOUT</h2>
-        <div class="banner-text">私について</div>
+        <div class="inner">
+          <h2 class="banner-title banner-title-work">WORK</h2>
+          <div class="banner-text banner-text-work">過去の制作物</div>
+        </div>
       </div>
-      <!--タイトルバナーここから-->
+      <!--タイトルバナーここまで-->
   
-      <!--about-textここから-->
-      <div class="about-text">
-        <p>上田　康貴 -Ueda Koki-</p>
-        <p>1993年7月3日生まれ</p>
-        <p>東京都出身　東京都在住</p>
-        <p>
-          2020年に地方公務員を退職<br>
-          現在はフリーランスでWeb制作を行っております。
-        </p>
-        <div class="btn">詳しいプロフィール</div>
-      </div>
-      <!--about-textここから-->
-  
+      <div class="inner">
+        <div class="work-wrapper">
+          
+          <!--wrok-itemここから-->
+          <a href="img/portfolio/my-theme-blog.png" class="work-item">
+            <div class="work-item-wrapper">
+              <img src="img/portfolio/my-theme-blog-pre.png" alt="">
+              <!--overlayここから-->
+              <div class="overlay">
+                <p class="overlay-text">WordPress自作テーマブログサイト</p>
+              </div>
+              <!--overlayここまで-->
+            </div>
+          </a>
+          <!--wrok-itemここまで-->
+
+          <!--wrok-itemここから-->
+          <a href="img/portfolio/isara.png" class="work-item">
+            <div class="work-item-wrapper">
+              <img src="img/portfolio/isara-pre.png" alt="">
+              <!--overlayここから-->
+              <div class="overlay">
+                <p class="overlay-text">iSara模写</p>
+              </div>
+              <!--overlayここまで-->
+            </div>
+          </a>
+          <!--wrok-itemここまで-->
+
+          <!--wrok-itemここから-->
+          <a href="img/portfolio/daitora2nd.png" class="work-item">
+            <div class="work-item-wrapper">
+              <img src="img/portfolio/daitora2nd-pre.png" alt="">
+              <!--overlayここから-->
+              <div class="overlay">
+                <p class="overlay-text">デイトラ2nd最終課題</p>
+              </div>
+              <!--overlayここまで-->
+            </div>
+          </a>
+          <!--wrok-itemここまで-->
+
+          <!--wrok-itemここから-->
+          <a href="img/portfolio/portfolio.png" class="work-item">
+            <div class="work-item-wrapper">
+              <img src="img/portfolio/portfolio-pre.png" alt="">
+              <!--overlayここから-->
+              <div class="overlay">
+                <p class="overlay-text">テンプレートポートフォリオサイト</p>
+              </div>
+              <!--overlayここまで-->
+            </div>
+          </a>
+          <!--wrok-itemここまで-->
+    
+        </div> <!--work-wrapper-->
+      </div> <!--inner-->
       <div class="banner"></div>
-    </div> <!--inner-->
-  </section>
-  <!--アバウトここまで-->
+    </section>
+    <!--ワークここまで-->
 
   <!--サービスここから-->
   <section id="service" class="service">
 
     <!--タイトルバナーここから-->
     <div class="banner">
-      <h2 class="banner-title">SERVICE</h2>
-      <div class="banner-text"></div>
+      <div class="inner">
+        <h2 class="banner-title banner-title-service">SERVICE</h2>
+        <div class="banner-text banner-text-service">私にできること</div>
+      </div>
     </div>
     <!--タイトルバナーここまで-->
 
     <div class="service-wrapper">
+      <div class="inner">
+        <!--service-itemsここから-->
+        <div class="service-items">
+    
+          <!--service-itemここから-->
+          <div class="service-item">
+            <div class="service-item-logo">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="service-item-title">
+              コーディング
+            </div>
+            <div class="service-item-text">
+              お客様よりお預かりしたデザインデータを基に、適切にコーディングいたします。
+            </div>
+          </div>
+          <!--service-itemここまで-->
+          <!--service-itemここから-->
+          <div class="service-item">
+            <div class="service-item-logo">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="service-item-title">
+              ランディングページ制作
+            </div>
+            <div class="service-item-text">
+              お客様のご要望をヒヤリングし、ご要望に沿ったランディングページを作成します。
+            </div>
+          </div>
+          <!--service-itemここまで-->
+          <!--service-itemここから-->
+          <div class="service-item">
+            <div class="service-item-logo">
+              <i class="fab fa-wordpress"></i>
+            </div>
+            <div class="service-item-title">
+              WordPressサイト制作
+            </div>
+            <div class="service-item-text">
+              お客様よりお預かりしたデザインデータを基にWordPressを用いてサイト構築を行います。
+            </div>
+          </div>
+          <!--service-itemここまで-->
+    
+        </div>
+        <!--service-itemsここまで-->
+        
+        <div class="btn"><a href="#">詳しい料金・納期など</a></div>
+      </div> <!--inner-->
 
-      <!--service-itemsここから-->
-      <div class="service-items">
-  
-        <!--service-itemここから-->
-        <div class="service-item">
-          <div class="service-item-logo">
-            <i class="fas fa-code"></i>
-          </div>
-          <div class="service-item-title">
-            コーディング
-          </div>
-          <div class="service-item-text">
-            お客様よりお預かりしたデザインデータを基に、適切にコーディングいたします。
-          </div>
-        </div>
-        <!--service-itemここまで-->
-        <!--service-itemここから-->
-        <div class="service-item">
-          <div class="service-item-logo">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <div class="service-item-title">
-            ランディングページ制作
-          </div>
-          <div class="service-item-text">
-            お客様のご要望をヒヤリングし、ご要望に沿ったランディングページを作成します。
-          </div>
-        </div>
-        <!--service-itemここまで-->
-        <!--service-itemここから-->
-        <div class="service-item">
-          <div class="service-item-logo">
-            <i class="fab fa-wordpress"></i>
-          </div>
-          <div class="service-item-title">
-            WordPressサイト制作
-          </div>
-          <div class="service-item-text">
-            お客様よりお預かりしたデザインデータを基にWordPressを用いてサイト構築を行います。
-          </div>
-        </div>
-        <!--service-itemここまで-->
-  
-      </div>
-      <!--service-itemsここまで-->
-
-      <div class="btn">詳しい料金・納期など</div>
     </div> <!--service-wrapper-->
   </section>
   <!--サービスここまで-->
 
-  <!--ワークここから-->
-  <section id="work" class="work">
+  <!--アバウトここから-->
+  <section id="about" class="about">
     <!--タイトルバナーここから-->
     <div class="banner">
-      <h2 class="banner-title">WORK</h2>
-      <div class="banner-text">過去の制作物</div>
+      <div class="inner">
+        <h2 class="banner-title banner-title-about">ABOUT</h2>
+        <div class="banner-text banner-text-about">私について</div>
+      </div>
     </div>
-    <!--タイトルバナーここまで-->
-
-    <div class="work-wrapper">
-
-      <!--wrok-itemここから-->
-      <a href="#" class="work-item">
-        <div class="work-item-wrapper">
-          <img src="" alt="">
-          <div class="overlay">
-            <p class="overlay-text">自作ポートフォリオサイト</p>
+    <!--タイトルバナーここから-->
+    <div class="inner">
+  
+      <!--about-textここから-->
+      <div class="about-text">
+        <div class="about-text-wrap">
+          <h3><i class="fas fa-user-circle"></i>上田　康貴 <b>-Ueda Koki-</b></h3>
+          <p>1993年7月3日生まれ</p>
+          <p>東京都出身　東京都在住</p>
+          <p>
+            独学でWordPressを用いたサイト制作まで学ぶ。<br>
+            現在はフリーランスでWeb制作を行っております。
+          </p>
+        </div>
+        <div class="about-text-wrap">
+          <h3><i class="fas fa-wrench"></i>SKILS</h3>
+          <div class="skils-wrap">
+            <div class="skils-wrap-box">
+              <i class="fab fa-html5 fa-2x"></i>
+            </div>
+            <div class="skils-wrap-box">
+              <i class="fab fa-css3-alt fa-2x"></i>
+            </div>
+            <div class="skils-wrap-box">
+              <i class="fab fa-bootstrap fa-2x"></i>
+            </div>
+            <div class="skils-wrap-box">
+              <i class="fab fa-sass fa-2x"></i>
+            </div>
+            <div class="skils-wrap-box">
+              <i class="fab fa-js-square fa-2x"></i>
+            </div>
+            <div class="skils-wrap-box">
+              <i class="fab fa-php fa-2x"></i>
+            </div>
+            <div class="skils-wrap-box">
+              <i class="fab fa-wordpress fa-2x"></i>
+            </div>
           </div>
         </div>
-      </a>
-      <!--wrok-itemここまで-->
-
-    </div> <!--work-wrapper-->
+        <div class="btn"><a href="#">詳しいプロフィール</a></div>
+      </div>
+      <!--about-textここから-->
+  
+    </div> <!--inner-->
+    <div class="banner"></div>
+    <div class="banner"></div>
   </section>
-  <!--ワークここまで-->
+  <!--アバウトここまで-->
 
   <!--コンタクトここから-->
   <section id="contact" class="contact">
     <!--タイトルバナーここから-->
     <div class="banner">
-      <h2 class="banner-title">CONTACT</h2>
-      <div class="banner-text">お問い合わせ</div>
+      <div class="inner">
+        <h2 class="banner-title banner-title-contact">CONTACT</h2>
+        <div class="banner-text banner-text-contact">お問い合わせ</div>
+      </div>
     </div>
     <!--タイトルバナーここまで-->
+    <div class="inner">
+
+      <div class="contact-text">
+        お問い合わせフォームは現在準備中です。<br>
+        お仕事のご依頼・ご相談はTwitterのDMにてお受けいたしております。<br>
+        お気軽にお問い合わせください。
+      </div>
+
+      <div class="btn"><a href="https://twitter.com/tanshiokoki73">ご連絡はこちら</a></div>
+
+    </div> <!--inner-->
   </section>
   <!--コンタクトここまで-->
   <!--フッターここから-->
   <footer>
     <div class="sns-container">
-      <a href="https://twitter.com/tanshiokoki73"><i class="fab fa-twitter"></i></a>
+      <a href="https://twitter.com/tanshiokoki73"><i class="fab fa-twitter fa-2x"></i></a>
     </div>
       &copy; 2020. UK Portfolio.
   </footer>

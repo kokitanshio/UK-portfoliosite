@@ -1,0 +1,41 @@
+.about{
+  background-image: url(../img/about-pc.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  &-text{
+    @include card;
+    padding: 40px 20px 40px 40px;
+    width: 450px;
+    margin: 50px 0 50px auto;
+    transform: translateY(110px);
+    &-wrap{
+      margin-bottom: 40px;
+      h3{
+        @include font(24);
+        margin-bottom: 20px;
+        b{
+          @include font(16);
+          font-family: $nameFont;
+          color: $strongColor;
+        }
+        i{
+          padding-right: 10px;
+          color: $keyColor;
+        }
+      }
+      p{
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .skils-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    &-box{
+      width: calc(25% - 20px);
+      margin: 0 10px 30px;
+      text-align: center;
+    }
+  }
+}

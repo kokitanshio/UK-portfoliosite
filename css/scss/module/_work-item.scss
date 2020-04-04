@@ -1,0 +1,17 @@
+.work-item{
+  display: block;
+  margin: 10px;
+  width: calc( 33% - 20px );
+  &-wrapper{
+    position: relative;
+    width: 100%;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  &:hover .overlay{
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,28 @@
+.top-text{
+  position: absolute;
+  writing-mode: vertical-rl;
+  left: 100px;
+  top: 50%;
+  @include font(24);
+  p{
+    position: relative;
+    display: inline-block;
+    color: rgba(255,255,255,0.8);
+    overflow: hidden;
+    &::before{
+      position: absolute;
+      display: block;
+      content: "";
+      top: -40px;
+      right: 2px;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0.1));
+      animation: fallLight 1.5s linear 0s infinite;
+    }
+    @keyframes fallLight {
+      0%{top: -40px;}
+      100%{top: 100%;}
+    }
+  }
+}

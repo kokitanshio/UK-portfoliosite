@@ -1,0 +1,76 @@
+.btn{
+  position: relative;
+  width: 250px;
+  height: 50px;
+  overflow: hidden;
+  line-height: 50px;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.1);
+  @include trans();
+  a{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  &::before,
+  &::after,
+  a::before,
+  a::after{
+    content:"";
+    position: absolute;
+    background: $strongColor;
+  }
+  &::before{
+    bottom: 0;
+    left: -50px;
+    width: 50px;
+    height: 1px;
+    animation: leftAnim 1.5s linear 0s infinite;
+  }
+  &::after{
+    bottom: -50px;
+    right: 0;
+    width: 1px;
+    height: 50px;
+    animation: bottomAnim 1.5s linear 1.2s infinite;
+  }
+  a::before{
+    top: 0;
+    right: -50px;
+    width: 50px;
+    height: 1px;
+    animation: rightAnim 1.5s linear 0s infinite;
+  }
+  a::after{
+    top: -50px;
+    left: 0;
+    width: 1px;
+    height: 50px;
+    animation: topAnim 1.5s linear 1.2s infinite;
+  }
+  @keyframes leftAnim {
+    0%{left: -50px;}
+    100%{left: 250px;}
+  }
+  @keyframes rightAnim {
+    0%{right: -50px;}
+    100%{right: 250px;}
+  }
+  @keyframes bottomAnim {
+    0%{bottom: -50px;}
+    100%{bottom: 250px;}
+  }
+  @keyframes topAnim {
+    0%{top: -50px;}
+    100%{top: 250px;}
+  }
+  :hover{
+    background: linear-gradient(to top left, $keyColor, $strongColor);
+    ::before,
+    ::after,
+    a::before,
+    a::after{
+      animation: none;
+    }
+  }
+}

@@ -294,3 +294,8 @@
   {
     vertical-align: bottom;
   }
+
+  body{
+    font-family:$mainEngFont, $mainJapFont, sans-serif;
+    color: $fontMain;
+  }

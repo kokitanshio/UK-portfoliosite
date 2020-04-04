@@ -1,0 +1,11 @@
+footer{
+  background-color: $subColor;
+  width: 100%;
+  padding: 40px 0;
+  @include font(12);
+  text-align: center;
+  color: $fontSub;
+  .sns-container{
+    padding-bottom: 20px;
+  }
+}

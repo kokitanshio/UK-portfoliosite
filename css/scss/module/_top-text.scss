@@ -4,10 +4,15 @@
   left: 100px;
   top: 50%;
   @include font(24);
+  @include mq(sp){
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   p{
     position: relative;
     display: inline-block;
-    color: rgba(255,255,255,0.8);
+    color: $whiteColor;
     overflow: hidden;
     &::before{
       position: absolute;
@@ -18,7 +23,7 @@
       width: 1px;
       height: 40px;
       background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0.1));
-      animation: fallLight 1.5s linear 0s infinite;
+      animation: fallLight 2.5s linear 0s infinite;
     }
     @keyframes fallLight {
       0%{top: -40px;}

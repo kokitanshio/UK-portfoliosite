@@ -299,3 +299,8 @@
     font-family:$mainEngFont, $mainJapFont, sans-serif;
     color: $fontMain;
   }
+  html{
+    @include mq(sp){
+      font-size: 12px;
+    }
+  }

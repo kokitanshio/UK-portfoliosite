@@ -2,9 +2,9 @@ header{
   width: 100%;
   height: 80px;
   background-color: $mainColor;
-
+  z-index: 110;
   //PC用header
-  .header-pc{
+  .header{
     display: flex;
     justify-content: space-between;
     height: 100%;
@@ -16,14 +16,21 @@ header{
   }
   .header-list{
     display: flex;
-    &-item{
+    @include mq(sp){
+      display: none;
+    }
+    li{
       a{
         display: flex;
         align-items: center;
         height: 100%;
         padding: 20px;
+        @include trans;
+        &:hover{
+          background-color: $strongColor;
+        }
       }
-      &+.header-list-item{
+      &+li{
         margin-left: 10px;
       }
     }
@@ -31,5 +38,85 @@ header{
   //PC用header
 
   //SP用header
+  .header-sp{
+    display: none;
+    @include mq(sp){
+      position: fixed;
+      z-index: 100;
+      top: 80px;left: 0;right: 0;bottom: 0;
+      background-color: rgba(51,51,51,0.8);
+      @include font(35);
+    }
+    &-list{
+      padding: 100px 50px;
+      li{
+        padding: 10px 0;
+        margin: 10px 0;
+        display: none;
+        a{
+          padding: 10px 0;
+          &:hover{
+            color: $strongColor;
+            @include trans;
+          }
+          i{
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
 
+//スクロール固定用css
+#header.header_fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(51,51,51,0.8);
+}
+
+//トグルボタン
+.header-toggle{
+  display: none;
+  @include mq(sp){
+    position: relative;
+    width: 35px;
+    cursor: pointer;
+    &:hover span{
+      background: $strongColor;
+    }
+  }
+  span{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: $whiteColor;
+    left: 0;
+    @include trans;
+  }
+}
+
+.toggle_one_active{
+  top: 25px;
+}
+.toggle_two_active{
+  top: 40px;
+}
+.toggle_three_active{
+  top: 55px;
+}
+
+//トグルクリック後
+.toggle_one{
+  top: 40px;
+  transform: rotate(45deg);
+}
+.toggle_two{
+  opacity: 0;
+}
+.toggle_three{
+  top: 40px;
+  transform: rotate(-45deg);
 }

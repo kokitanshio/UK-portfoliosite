@@ -65,12 +65,6 @@
     100%{top: 250px;}
   }
   :hover{
-    background: linear-gradient(to top left, $keyColor, $strongColor);
-    ::before,
-    ::after,
-    a::before,
-    a::after{
-      animation: none;
-    }
+    background: $strongColor;
   }
 }

@@ -1,12 +1,17 @@
 .banner{
   width: 100%;
-  height: 80px;
+  height: 82px;
   background-color: $mainColor;
   &-title{
     @include font(80);
     font-family: $titleBackFont;
     opacity: 0.3;
     letter-spacing: 40px;
+    line-height: 80px;
+    @include mq(sp){
+      overflow: hidden;
+      letter-spacing: 28px;
+    }
   }
   &-text{
     @include font(24);
@@ -14,18 +19,42 @@
     position: absolute;
     bottom: 0;
     letter-spacing: 20px;
+    @include mq(sp){
+      left: 0;
+      transform: translateX(0);
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 
 .banner-title-about, .banner-title-work{
   text-align: right;
+  @include mq(sp){
+    text-align: center;
+  }
 }
 .banner-title-service, .banner-title-contact{
   text-align: left;
+  @include mq(sp){
+    text-align: center;
+  }
 }
 .banner-text-about, .banner-text-work{
   right: 15%;
+  @include mq(sp){
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+    text-align: center;
+  }
 }
 .banner-text-service, .banner-text-contact{
   left: 15%;
+  @include mq(sp){
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+    text-align: center;
+  }
 }

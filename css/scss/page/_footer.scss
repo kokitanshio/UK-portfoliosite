@@ -7,5 +7,12 @@ footer{
   color: $fontSub;
   .sns-container{
     padding-bottom: 20px;
+    i{
+      margin: 0 10px;
+      @include trans;
+      &:hover{
+        color: $strongColor;
+      }
+    }
   }
 }

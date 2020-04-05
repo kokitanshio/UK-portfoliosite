@@ -7,16 +7,25 @@
     top: 80px;
     border-right: 100vw solid $mainColor;
     border-bottom: 200px solid $subColor;
+    @include mq(sp){
+      border-bottom: 150px solid $mainColor;
+    }
   }
   &-wrapper{
     position: relative;
     margin: 140px 0 100px;
+    @include mq(sp){
+      margin: 100px 0;
+    }
     &::before{
       content: "";
       position: absolute;
       bottom: -100px;
       border-left: 100vw solid $mainColor;
       border-top: 200px solid $subColor;
+      @include mq(sp){
+        border-top: 200px solid $mainColor;
+      }
     }
   }
   &-items{
@@ -24,5 +33,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 80px;
+    @include mq(sp){
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
   }
 }

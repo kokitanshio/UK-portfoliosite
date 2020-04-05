@@ -15,7 +15,9 @@
   <link rel="icon" href="img/favicon.png">
   <!--fontawsom-->
   <link href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" rel="stylesheet">
-  <!--fontawsom-->
+  <!--wow-->
+  <link rel="stylesheet" href="css/animate.css">
+  <!--stylesheet-->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -33,8 +35,8 @@
       <!--top-logoここまで-->
 
       <div class="top-text">
-        <p>どこかの誰かではない</p>
-        <p>あなたのための</p>
+        <p>『どこかの誰か』ではない</p>
+        <p>『あなた』のための</p>
         <p>WEB制作をお手伝いします。</p>
       </div>
     </div>
@@ -42,22 +44,49 @@
   <!--トップここまで-->
 
   <!--ヘッダーここから-->
-  <header>
-    <!--pc用headerここから-->
-    <nav class="inner header-pc">
-      <div class="header-pc-logo">
+  <header id="header">
+    <nav class="inner header">
+      <div class="header-logo">
         <a href="#"></a>
       </div>
+
+      <!--PC用header-listここから-->
       <ul class="header-list">
         <li class="header-list-item"><a href="#work">WORK</a></li>
         <li class="header-list-item"><a href="#service">SERVICE</a></li>
         <li class="header-list-item"><a href="#about">ABOUT</a></li>
         <li class="header-list-item"><a href="#contact">CONTACT</a></li>
-        <li class="header-list-item"><a href="https://twitter.com/tanshiokoki73"><i class="fab fa-twitter"></i></a></li>
+        <li class="header-list-item"><a href="https://twitter.com/tanshiokoki73" id="twitter"><i class="fab fa-twitter"></i></a></li>
       </ul>
+      <!--PC用header-listここまで-->
+
+      <!--トグルボタン-->
+      <div id="toggle" class="header-toggle">
+        <span id="toggle_one" class="toggle_one_active"></span>
+        <span id="toggle_two" class="toggle_two_active"></span>
+        <span id="toggle_three" class="toggle_three_active"></span>
+      </div>
+      <!--トグルボタン-->
     </nav>
-    <!--pc用headerここまで-->
-    <!--sp用headerここから-->
+
+    <!--トグルクリックでモーダル-->
+    <div class="header-sp">
+      <nav>
+
+        <!--SP用header-listここから-->
+        <ul class="header-sp-list">
+          <li class="header-sp-list-item"><a href="#work"><i class="fas fa-briefcase"></i>WORK</a></li>
+          <li class="header-sp-list-item"><a href="#service"><i class="fas fa-tasks"></i>SERVICE</a></li>
+          <li class="header-sp-list-item"><a href="#about"><i class="far fa-address-card"></i>ABOUT</a></li>
+          <li class="header-sp-list-item"><a href="#contact"><i class="far fa-envelope"></i>CONTACT</a></li>
+          <li class="header-sp-list-item"><a href="https://twitter.com/tanshiokoki73" id="twitter_sp"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+        <!--SP用header-listここまで-->
+
+      </nav>
+    </div>
+    <!--トグルクリックでモーダル-->
+
     <!--sp用headerここまで-->
   </header>
   <!--ヘッダーここまで-->
@@ -67,8 +96,8 @@
       <!--タイトルバナーここから-->
       <div class="banner">
         <div class="inner">
-          <h2 class="banner-title banner-title-work">WORK</h2>
-          <div class="banner-text banner-text-work">過去の制作物</div>
+          <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-work">WORK</h2>
+          <div data-wow-delay="0.4s" class="wow slideInLeft banner-text banner-text-work">過去の制作物</div>
         </div>
       </div>
       <!--タイトルバナーここまで-->
@@ -77,7 +106,7 @@
         <div class="work-wrapper">
           
           <!--wrok-itemここから-->
-          <a href="img/portfolio/my-theme-blog.png" class="work-item">
+          <a href="img/portfolio/my-theme-blog.png" class="wow fadeInUp work-item" data-wow-offset="200">
             <div class="work-item-wrapper">
               <img src="img/portfolio/my-theme-blog-pre.png" alt="">
               <!--overlayここから-->
@@ -90,7 +119,7 @@
           <!--wrok-itemここまで-->
 
           <!--wrok-itemここから-->
-          <a href="img/portfolio/isara.png" class="work-item">
+          <a href="img/portfolio/isara.png" class="wow fadeInUp work-item" data-wow-offset="200">
             <div class="work-item-wrapper">
               <img src="img/portfolio/isara-pre.png" alt="">
               <!--overlayここから-->
@@ -103,7 +132,7 @@
           <!--wrok-itemここまで-->
 
           <!--wrok-itemここから-->
-          <a href="img/portfolio/daitora2nd.png" class="work-item">
+          <a href="img/portfolio/daitora2nd.png" class="wow fadeInUp work-item" data-wow-offset="200">
             <div class="work-item-wrapper">
               <img src="img/portfolio/daitora2nd-pre.png" alt="">
               <!--overlayここから-->
@@ -116,7 +145,7 @@
           <!--wrok-itemここまで-->
 
           <!--wrok-itemここから-->
-          <a href="img/portfolio/portfolio.png" class="work-item">
+          <a href="img/portfolio/portfolio.png" class="wow fadeInUp work-item" data-wow-offset="200">
             <div class="work-item-wrapper">
               <img src="img/portfolio/portfolio-pre.png" alt="">
               <!--overlayここから-->
@@ -127,10 +156,22 @@
             </div>
           </a>
           <!--wrok-itemここまで-->
+
+          <!--wrok-itemここから-->
+          <a href="img/portfolio/airbnb.png" class="wow fadeInUp work-item" data-wow-offset="200">
+            <div class="work-item-wrapper">
+              <img src="img/portfolio/airbnb-pre.png" alt="">
+              <!--overlayここから-->
+              <div class="overlay">
+                <p class="overlay-text">Airbnb模写</p>
+              </div>
+              <!--overlayここまで-->
+            </div>
+          </a>
+          <!--wrok-itemここまで-->
     
         </div> <!--work-wrapper-->
       </div> <!--inner-->
-      <div class="banner"></div>
     </section>
     <!--ワークここまで-->
 
@@ -140,8 +181,8 @@
     <!--タイトルバナーここから-->
     <div class="banner">
       <div class="inner">
-        <h2 class="banner-title banner-title-service">SERVICE</h2>
-        <div class="banner-text banner-text-service">私にできること</div>
+        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-service">SERVICE</h2>
+        <div data-wow-delay="0.4s" class="wow slideInRight banner-text banner-text-service">私にできること</div>
       </div>
     </div>
     <!--タイトルバナーここまで-->
@@ -206,23 +247,25 @@
     <!--タイトルバナーここから-->
     <div class="banner">
       <div class="inner">
-        <h2 class="banner-title banner-title-about">ABOUT</h2>
-        <div class="banner-text banner-text-about">私について</div>
+        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-about">ABOUT</h2>
+        <div data-wow-delay="0.4s" class="wow slideInLeft banner-text banner-text-about">私について</div>
       </div>
     </div>
     <!--タイトルバナーここから-->
     <div class="inner">
   
       <!--about-textここから-->
-      <div class="about-text">
+      <div class="about-text wow fadeIn" data-wow-offset="350">
         <div class="about-text-wrap">
           <h3><i class="fas fa-user-circle"></i>上田　康貴 <b>-Ueda Koki-</b></h3>
-          <p>1993年7月3日生まれ</p>
-          <p>東京都出身　東京都在住</p>
-          <p>
-            独学でWordPressを用いたサイト制作まで学ぶ。<br>
-            現在はフリーランスでWeb制作を行っております。
-          </p>
+          <div class="about-text-wrap-box">
+            <p>1993年7月3日生まれ</p>
+            <p>東京都出身　東京都在住</p>
+            <p>
+              独学でWordPressを用いたサイト制作まで学ぶ。<br>
+              現在はフリーランスでWeb制作を行っております。
+            </p>
+          </div>
         </div>
         <div class="about-text-wrap">
           <h3><i class="fas fa-wrench"></i>SKILS</h3>
@@ -265,8 +308,8 @@
     <!--タイトルバナーここから-->
     <div class="banner">
       <div class="inner">
-        <h2 class="banner-title banner-title-contact">CONTACT</h2>
-        <div class="banner-text banner-text-contact">お問い合わせ</div>
+        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-contact">CONTACT</h2>
+        <div data-wow-delay="0.4s" class="wow slideInRight banner-text banner-text-contact">お問い合わせ</div>
       </div>
     </div>
     <!--タイトルバナーここまで-->
@@ -287,9 +330,21 @@
   <footer>
     <div class="sns-container">
       <a href="https://twitter.com/tanshiokoki73"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="https://github.com/"><i class="fab fa-github fa-2x"></i></a>
     </div>
       &copy; 2020. UK Portfolio.
   </footer>
   <!--フッターここまで-->
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--headerのJS-->
+  <script src="js/header.js"></script>
+  <!--twitterアイコンのJS-->
+  <script src="js/twitter.js"></script>
+  <!--スクロール系JS-->
+  <script src="js/scroll.js"></script>
+  <!--wow-->
+  <script src="js/wow.min.js"></script>
+  <script src="js/wow_start.js"></script>
 </body>
 </html>

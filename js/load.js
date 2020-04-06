@@ -14,6 +14,8 @@ $(function () {
 
     setTimeout(logo, 1600); //画面読み込み後1.6s後にロゴ処理実行
 
+    setTimeout(stopload, 10000); //10秒経ったらロード画面非表示に
+
     function loading() { //ローディング処理の関数
       $.when(
         $('#load_back').animate({ //グレー背景を白にする
@@ -34,6 +36,11 @@ $(function () {
       }, 4000);
       $('.top-text').delay(2000).fadeIn(2000);//2s遅れでtop-textをフェードイン
     } //top-logoの関数終了
+
+    function stopload() { //ロード画面終了の関数
+      $('#load').css({ 'display': 'none' });
+      $('body').css({ 'overflow': 'initial' });
+    }
     
   });
 })

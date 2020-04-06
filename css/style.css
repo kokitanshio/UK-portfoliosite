@@ -377,6 +377,7 @@ body {
   color: rgba(255, 255, 255, 0.8);
   text-shadow: 0px 0px 5px #fff, 0px 0px 10px #ffcccc, 0px 0px 20px #ff9999, 0px 0px 40px #ff6666, 0px 0px 60px #ff3333;
   animation: flash 5s linear infinite;
+  -webkit-animation: flash 5s linear infinite;
 }
 
 .top-logo-sbtitle {
@@ -408,6 +409,22 @@ body {
 }
 
 @keyframes flash {
+  9%, 12%, 79%, 82%, 81%, 84% {
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0px 0px 30px #fff, 0px 0px 50px #ffcccc, 0px 0px 70px #ff9999, 0px 0px 90px #ff6666, 0px 0px 100px #ff3333;
+  }
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0px 0px 5px #fff, 0px 0px 10px #ffcccc, 0px 0px 20px #ff9999, 0px 0px 40px #ff6666, 0px 0px 60px #ff3333, 10px 10px 10px #ffcccc, 10px 10px 20px #ff9999, 10px 10px 40px #ff6666, 10px 10px 60px #ff3333, -10px -10px 10px #ffcccc, -10px -10px 20px #ff9999, -10px -10px 40px #ff6666, -10px -10px 60px #ff3333, 10px -10px 10px #ffcccc, 10px -10px 20px #ff9999, 10px -10px 40px #ff6666, 10px -10px 60px #ff3333, -10px 10px 10px #ffcccc, -10px 10px 20px #ff9999, -10px 10px 40px #ff6666, -10px 10px 60px #ff3333;
+  }
+  10%, 80%, 82% {
+    opacity: 0.2;
+  }
+}
+
+@-webkit-keyframes flash {
   9%, 12%, 79%, 82%, 81%, 84% {
     opacity: 1;
   }
@@ -455,6 +472,8 @@ body {
   right: 2px;
   width: 1px;
   height: 40px;
+  background: -webkit-linear-gradient(bottom, white, rgba(255, 255, 255, 0.1));
+  background: -moz-linear-gradient(bottom, white, rgba(255, 255, 255, 0.1));
   background: linear-gradient(to top, white, rgba(255, 255, 255, 0.1));
   animation: fallLight 2.5s linear 0s infinite;
 }
@@ -477,7 +496,7 @@ body {
 .banner-title {
   font-size: 80px;
   font-size: 5rem;
-  font-family: "Painted Brush Slant";
+  font-family: "Painted Brush Slant", "Brush Script MT", "Dancing Script", cursive, "Kaushan Script", cursive;
   opacity: 0.3;
   letter-spacing: 40px;
   line-height: 80px;
@@ -644,6 +663,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  background: -webkit-linear-gradient(right, #f6b483, #ff3333);
+  background: -moz-linear-gradient(right, #f6b483, #ff3333);
   background: linear-gradient(to top left, #f6b483, #ff3333);
   opacity: 0;
   transform: scale(0.7);
@@ -711,6 +732,7 @@ body {
   width: 50px;
   height: 1px;
   animation: leftAnim 1.5s linear 0s infinite;
+  -webkit-animation: leftAnim 1.5s linear 0s infinite;
 }
 
 .btn::after {
@@ -718,7 +740,8 @@ body {
   right: 0;
   width: 1px;
   height: 50px;
-  animation: bottomAnim 1.5s linear .75s infinite;
+  animation: bottomAnim 1.5s linear 1.2s infinite;
+  -webkit-animation: bottomAnim 1.5s linear 1.2s infinite;
 }
 
 .btn a::before {
@@ -727,6 +750,7 @@ body {
   width: 50px;
   height: 1px;
   animation: rightAnim 1.5s linear 0s infinite;
+  -webkit-animation: rightAnim 1.5s linear 0s infinite;
 }
 
 .btn a::after {
@@ -735,9 +759,19 @@ body {
   width: 1px;
   height: 50px;
   animation: topAnim 1.5s linear 1.2s infinite;
+  -webkit-animation: topAnim 1.5s linear 1.2s infinite;
 }
 
 @keyframes leftAnim {
+  0% {
+    left: -50px;
+  }
+  100% {
+    left: 250px;
+  }
+}
+
+@-webkit-keyframes leftAnim {
   0% {
     left: -50px;
   }
@@ -755,6 +789,15 @@ body {
   }
 }
 
+@-webkit-keyframes rightAnim {
+  0% {
+    right: -50px;
+  }
+  100% {
+    right: 250px;
+  }
+}
+
 @keyframes bottomAnim {
   0% {
     bottom: -50px;
@@ -764,7 +807,25 @@ body {
   }
 }
 
+@-webkit-keyframes bottomAnim {
+  0% {
+    bottom: -50px;
+  }
+  100% {
+    bottom: 250px;
+  }
+}
+
 @keyframes topAnim {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: 250px;
+  }
+}
+
+@-webkit-keyframes topAnim {
   0% {
     top: -50px;
   }
@@ -840,8 +901,11 @@ body {
   height: 1px;
   bottom: 0;
   right: -250px;
+  background: -webkit-linear-gradient(left, #fff, transparent);
+  background: -moz-linear-gradient(left, #fff, transparent);
   background: linear-gradient(to right, #fff, transparent);
   animation: loadRight 1.5s linear .75s infinite;
+  -webkit-animation: loadRight 1.5s linear .75s infinite;
 }
 
 .load-top::after {
@@ -849,8 +913,11 @@ body {
   height: 100%;
   top: -250px;
   right: 0;
+  background: -webkit-linear-gradient(bottom, #fff, transparent);
+  background: -moz-linear-gradient(bottom, #fff, transparent);
   background: linear-gradient(to top, #fff, transparent);
   animation: loadTop 1.5s linear 0s infinite;
+  -webkit-animation: loadTop 1.5s linear 0s infinite;
 }
 
 .load-top span::before {
@@ -858,8 +925,11 @@ body {
   height: 1px;
   top: 0;
   left: -250px;
+  background: -webkit-linear-gradient(right, #fff, transparent);
+  background: -moz-linear-gradient(right, #fff, transparent);
   background: linear-gradient(to left, #fff, transparent);
   animation: loadLeft 1.5s linear .75s infinite;
+  -webkit-animation: loadLeft 1.5s linear .75s infinite;
 }
 
 .load-top span::after {
@@ -867,11 +937,23 @@ body {
   height: 100%;
   left: 0;
   bottom: -250px;
+  background: -webkit-linear-gradient(top, #fff, transparent);
+  background: -moz-linear-gradient(top, #fff, transparent);
   background: linear-gradient(to bottom, #fff, transparent);
   animation: loadBottom 1.5s linear 0s infinite;
+  -webkit-animation: loadBottom 1.5s linear 0s infinite;
 }
 
 @keyframes loadRight {
+  0% {
+    right: -250px;
+  }
+  100% {
+    right: 250px;
+  }
+}
+
+@-webkit-keyframes loadRight {
   0% {
     right: -250px;
   }
@@ -889,6 +971,15 @@ body {
   }
 }
 
+@-webkit-keyframes loadTop {
+  0% {
+    top: -250px;
+  }
+  100% {
+    top: 250px;
+  }
+}
+
 @keyframes loadLeft {
   0% {
     left: -250px;
@@ -898,7 +989,25 @@ body {
   }
 }
 
+@-webkit-keyframes loadLeft {
+  0% {
+    left: -250px;
+  }
+  100% {
+    left: 250px;
+  }
+}
+
 @keyframes loadBottom {
+  0% {
+    bottom: -250px;
+  }
+  100% {
+    bottom: 250px;
+  }
+}
+
+@-webkit-keyframes loadBottom {
   0% {
     bottom: -250px;
   }
@@ -928,7 +1037,7 @@ body {
 
 .top-video {
   width: 100%;
-  height: 110%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   position: fixed;
@@ -940,7 +1049,18 @@ header {
   width: 100%;
   height: 80px;
   background-color: #333333;
+}
+
+header .pc-header {
+  width: 100%;
+  height: 80px;
   z-index: 110;
+}
+
+@media screen and (max-width: 767px) {
+  header .pc-header {
+    display: none;
+  }
 }
 
 header .header {
@@ -955,12 +1075,6 @@ header .header-logo img {
 
 header .header-list {
   display: flex;
-}
-
-@media screen and (max-width: 767px) {
-  header .header-list {
-    display: none;
-  }
 }
 
 header .header-list li {
@@ -984,15 +1098,25 @@ header .header-list li + li {
   margin-left: 10px;
 }
 
-header .header-sp {
+.sp-header {
   display: none;
 }
 
 @media screen and (max-width: 767px) {
-  header .header-sp {
+  .sp-header {
+    display: block;
+  }
+}
+
+.sp-header .header-sp {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .sp-header .header-sp {
     position: fixed;
     z-index: 100;
-    top: 80px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1002,37 +1126,38 @@ header .header-sp {
   }
 }
 
-header .header-sp-list {
+.sp-header .header-sp-list {
   padding: 100px 50px;
 }
 
-header .header-sp-list li {
+.sp-header .header-sp-list li {
   padding: 10px 0;
   margin: 10px 0;
   display: none;
 }
 
-header .header-sp-list li a {
+.sp-header .header-sp-list li a {
   padding: 10px 0;
 }
 
-header .header-sp-list li a:hover {
+.sp-header .header-sp-list li a:hover {
   color: #ff3333;
   transition: all 0.6s ease;
   -webkit-transition: all 0.6s ease;
   -moz-transition: all 0.6s ease;
 }
 
-header .header-sp-list li a i {
+.sp-header .header-sp-list li a i {
   padding-right: 10px;
 }
 
-#header.header_fixed {
+.header_fixed {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: rgba(51, 51, 51, 0.8);
+  z-index: 110;
 }
 
 .header-toggle {
@@ -1041,8 +1166,12 @@ header .header-sp-list li a i {
 
 @media screen and (max-width: 767px) {
   .header-toggle {
-    position: relative;
+    position: fixed;
+    right: 24px;
+    top: 0;
+    height: 80px;
     width: 35px;
+    z-index: 101;
     cursor: pointer;
   }
   .header-toggle:hover span {
@@ -1160,8 +1289,10 @@ header .header-sp-list li a i {
 }
 
 .about {
-  background-image: url(../img/about-me.jpg);
+  background-image: url(../img/about-me2.jpg);
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
@@ -1197,7 +1328,7 @@ header .header-sp-list li a i {
 .about-text-wrap h3 b {
   font-size: 16px;
   font-size: 1rem;
-  font-family: "Zapfino";
+  font-family: "Zapfino", "Alex Brush", cursive, "Great Vibes", cursive;
   color: #ff3333;
 }
 
@@ -1284,6 +1415,8 @@ footer .sns-container i:hover {
 }
 
 .to-top:hover::before {
+  background: -webkit-linear-gradient(top, #ff3333, transparent);
+  background: -moz-linear-gradient(top, #ff3333, transparent);
   background: linear-gradient(to bottom, #ff3333, transparent);
 }
 
@@ -1295,6 +1428,8 @@ footer .sns-container i:hover {
   height: 25px;
   left: 0;
   bottom: -35px;
+  background: -webkit-linear-gradient(top, #fff, transparent);
+  background: -moz-linear-gradient(top, #fff, transparent);
   background: linear-gradient(to bottom, #fff, transparent);
   animation: toTop 2s linear infinite;
 }

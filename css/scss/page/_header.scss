@@ -1,9 +1,15 @@
-header{
+header{ //PC用header
   width: 100%;
   height: 80px;
   background-color: $mainColor;
-  z-index: 110;
-  //PC用header
+  .pc-header{
+    width: 100%;
+    height: 80px;
+    z-index: 110;
+    @include mq(sp){
+      display: none;
+    }
+  }
   .header{
     display: flex;
     justify-content: space-between;
@@ -16,9 +22,10 @@ header{
   }
   .header-list{
     display: flex;
-    @include mq(sp){
-      display: none;
-    }
+    //当初はheaderをのこして中のlistをSPで非表示にしてトグルを表示させようとしたがheader高さまでスクロール後に表示させるならheaderそのものを残す必要がないため消すことにした。
+    // @include mq(sp){
+    //   display: none;
+    // }
     li{
       @include trans;
       &:hover{
@@ -35,15 +42,21 @@ header{
       }
     }
   }
-  //PC用header
+}
+//PC用header
 
-  //SP用header
+//SP用header
+.sp-header{
+  display: none;
+  @include mq(sp){
+    display: block;
+  }
   .header-sp{
     display: none;
     @include mq(sp){
       position: fixed;
       z-index: 100;
-      top: 80px;left: 0;right: 0;bottom: 0;
+      top: 0;left: 0;right: 0;bottom: 0;
       background-color: rgba(51,51,51,0.8);
       @include font(35);
     }
@@ -69,20 +82,25 @@ header{
 }
 
 //スクロール固定用css
-#header.header_fixed{
+.header_fixed{
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: rgba(51,51,51,0.8);
+  z-index: 110;
 }
 
 //トグルボタン
 .header-toggle{
   display: none;
   @include mq(sp){
-    position: relative;
+    position: fixed;
+    right: 24px;
+    top: 0;
+    height: 80px;
     width: 35px;
+    z-index: 101;
     cursor: pointer;
     &:hover span{
       background: $strongColor;

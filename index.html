@@ -3,20 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="format-detection" content="telephone=no">
   <title>UK Portfolio site</title>
+  <!--SEO対策-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="ページの内容を表す文章">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="format-detection" content="telephone=no">
+  <!--SEO対策-->
+  <!--Twitterカード-->
+	<meta property="og:url" content="https://kokitanshio.com">
 	<meta property="og:title" content="UK Portfolio site">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="">
-	<meta property="og:image" content="">
+	<meta property="og:description" content="上田康貴のポートフォリオサイトです">
+  <meta property="og:image" content="">
 	<meta property="og:site_name" content="UK Portfolio site">
-	<meta property="og:description" content="">
+  <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tanshiokoki73">
+  <!--Twitterカード-->
+  <!--サイトアイコン-->
   <link rel="icon" href="img/favicon.png">
+  <!--サイトアイコン-->
+  <!--スマホ用アイコン-->
+  <link rel="apple-touch-icon-precomposed" href="画像のURL">
+  <!--スマホ用アイコン-->
+
   <!--fontawsom-->
   <link href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" rel="stylesheet">
   <!--wow-->
   <link rel="stylesheet" href="css/animate.css">
+  <!--googlefont-->
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Kaushan+Script&display=swap" rel="stylesheet">
   <!--stylesheet-->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -30,7 +47,9 @@
 
   <!--トップここから-->
   <section id="top" class="top">
-    <video src="img/top-video.mp4" autoplay muted loop playsinline class="top-video"></video>
+    <video poster="img/portfolio/uk-portfolio-pre.png" autoplay muted loop playsinline class="top-video">
+      <source src="img/top-video.mp4" type="video/mp4">
+    </video>
     <div class="inner top-wrapper">
   
       <!--top-logoここから-->
@@ -52,50 +71,58 @@
   <!--トップここまで-->
 
   <!--ヘッダーここから-->
+
   <header id="header">
-    <nav class="inner header">
-      <div class="header-logo">
-        <a href="#"></a>
-      </div>
-
-      <!--PC用header-listここから-->
-      <ul class="header-list">
-        <li class="header-list-item"><a href="#work">WORK</a></li>
-        <li class="header-list-item"><a href="#service">SERVICE</a></li>
-        <li class="header-list-item"><a href="#about">ABOUT</a></li>
-        <li class="header-list-item"><a href="#contact">CONTACT</a></li>
-        <li class="header-list-item"><a href="https://twitter.com/tanshiokoki73" id="twitter"><i class="fab fa-twitter"></i></a></li>
-      </ul>
-      <!--PC用header-listここまで-->
-
-      <!--トグルボタン-->
-      <div id="toggle" class="header-toggle">
-        <span id="toggle_one" class="toggle_one_active"></span>
-        <span id="toggle_two" class="toggle_two_active"></span>
-        <span id="toggle_three" class="toggle_three_active"></span>
-      </div>
-      <!--トグルボタン-->
-    </nav>
-
-    <!--トグルクリックでモーダル-->
-    <div class="header-sp">
-      <nav>
-
-        <!--SP用header-listここから-->
-        <ul class="header-sp-list">
-          <li class="header-sp-list-item"><a href="#work"><i class="fas fa-briefcase"></i>WORK</a></li>
-          <li class="header-sp-list-item"><a href="#service"><i class="fas fa-tasks"></i>SERVICE</a></li>
-          <li class="header-sp-list-item"><a href="#about"><i class="far fa-address-card"></i>ABOUT</a></li>
-          <li class="header-sp-list-item"><a href="#contact"><i class="far fa-envelope"></i>CONTACT</a></li>
-          <li class="header-sp-list-item"><a href="https://twitter.com/tanshiokoki73" id="twitter_sp"><i class="fab fa-twitter"></i></a></li>
+  <!--PC用headerここから-->
+    <div class="pc-header">
+      <nav class="inner header">
+        <div class="header-logo">
+          <a href="#top"></a>
+        </div>
+        <!--PC用header-listここから-->
+        <ul class="header-list">
+          <li class="header-list-item"><a href="#work">WORK</a></li>
+          <li class="header-list-item"><a href="#service">SERVICE</a></li>
+          <li class="header-list-item"><a href="#about">ABOUT</a></li>
+          <li class="header-list-item"><a href="#contact">CONTACT</a></li>
+          <li class="header-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a></li>
         </ul>
-        <!--SP用header-listここまで-->
-
+        <!--PC用header-listここまで-->
       </nav>
+      <!--PC用headerここまで-->
     </div>
-    <!--トグルクリックでモーダル-->
-
-    <!--sp用headerここまで-->
+  
+    <!--SP用headerここから-->
+    <div class="sp-header">
+      <!--SP用headerはheaderとして残さず最初から右上にfixedしたトグルボタンを表示する形にした-->
+      <!--トグルボタンはheader高さ以上でフェードインの予定-->
+        <!--トグルボタン-->
+        <div id="toggle" class="header-toggle">
+          <span id="toggle_one" class="toggle_one_active"></span>
+          <span id="toggle_two" class="toggle_two_active"></span>
+          <span id="toggle_three" class="toggle_three_active"></span>
+        </div>
+        <!--トグルボタン-->
+  
+        <!--トグルクリックでモーダル-->
+        <div class="header-sp">
+          <nav>
+            <!--SP用header-listここから-->
+            <ul class="header-sp-list">
+              <li class="header-sp-list-item"><a href="#top"></a></li>
+              <li class="header-sp-list-item"><a href="#work"><i class="fas fa-briefcase"></i>WORK</a></li>
+              <li class="header-sp-list-item"><a href="#service"><i class="fas fa-tasks"></i>SERVICE</a></li>
+              <li class="header-sp-list-item"><a href="#about"><i class="far fa-address-card"></i>ABOUT</a></li>
+              <li class="header-sp-list-item"><a href="#contact"><i class="far fa-envelope"></i>CONTACT</a></li>
+              <li class="header-sp-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter_sp"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+            <!--SP用header-listここまで-->
+      
+          </nav>
+        </div>
+        <!--トグルクリックでモーダル-->
+    </div>
+      <!--sp用headerここまで-->
   </header>
   <!--ヘッダーここまで-->
 
@@ -114,9 +141,22 @@
         <div class="work-wrapper">
           
           <!--wrok-itemここから-->
+          <a href="img/portfolio/uk-portfolio.png.png" class="wow fadeInUp work-item" data-wow-offset="200">
+            <div class="work-item-wrapper">
+              <img src="img/portfolio/uk-portfolio-pre.png" alt="自作ポートフォリオサイトの画像">
+              <!--overlayここから-->
+              <div class="overlay">
+                <p class="overlay-text">自作ポートフォリオサイト</p>
+              </div>
+              <!--overlayここまで-->
+            </div>
+          </a>
+          <!--wrok-itemここまで-->
+          
+          <!--wrok-itemここから-->
           <a href="img/portfolio/my-theme-blog.png" class="wow fadeInUp work-item" data-wow-offset="200">
             <div class="work-item-wrapper">
-              <img src="img/portfolio/my-theme-blog-pre.png" alt="">
+              <img src="img/portfolio/my-theme-blog-pre.png" alt="WordPress自作テーマブログサイトの画像">
               <!--overlayここから-->
               <div class="overlay">
                 <p class="overlay-text">WordPress自作テーマブログサイト</p>
@@ -129,7 +169,7 @@
           <!--wrok-itemここから-->
           <a href="img/portfolio/isara.png" class="wow fadeInUp work-item" data-wow-offset="200">
             <div class="work-item-wrapper">
-              <img src="img/portfolio/isara-pre.png" alt="">
+              <img src="img/portfolio/isara-pre.png" alt="iSara模写の画像">
               <!--overlayここから-->
               <div class="overlay">
                 <p class="overlay-text">iSara模写</p>
@@ -142,7 +182,7 @@
           <!--wrok-itemここから-->
           <a href="img/portfolio/daitora2nd.png" class="wow fadeInUp work-item" data-wow-offset="200">
             <div class="work-item-wrapper">
-              <img src="img/portfolio/daitora2nd-pre.png" alt="">
+              <img src="img/portfolio/daitora2nd-pre.png" alt="デイトラ2nd最終課題の画像">
               <!--overlayここから-->
               <div class="overlay">
                 <p class="overlay-text">デイトラ2nd最終課題</p>
@@ -155,7 +195,7 @@
           <!--wrok-itemここから-->
           <a href="img/portfolio/portfolio.png" class="wow fadeInUp work-item" data-wow-offset="200">
             <div class="work-item-wrapper">
-              <img src="img/portfolio/portfolio-pre.png" alt="">
+              <img src="img/portfolio/portfolio-pre.png" alt="テンプレートポートフォリオサイトの画像">
               <!--overlayここから-->
               <div class="overlay">
                 <p class="overlay-text">テンプレートポートフォリオサイト</p>
@@ -168,10 +208,23 @@
           <!--wrok-itemここから-->
           <a href="img/portfolio/airbnb.png" class="wow fadeInUp work-item" data-wow-offset="200">
             <div class="work-item-wrapper">
-              <img src="img/portfolio/airbnb-pre.png" alt="">
+              <img src="img/portfolio/airbnb-pre.png" alt="Airbnb模写の画像">
               <!--overlayここから-->
               <div class="overlay">
                 <p class="overlay-text">Airbnb模写</p>
+              </div>
+              <!--overlayここまで-->
+            </div>
+          </a>
+          <!--wrok-itemここまで-->
+
+          <!--wrok-itemここから-->
+          <a href="img/portfolio/Nuno.png" class="wow fadeInUp work-item" data-wow-offset="200">
+            <div class="work-item-wrapper">
+              <img src="img/portfolio/Nuno-pre.png" alt="Nuno模写の画像">
+              <!--overlayここから-->
+              <div class="overlay">
+                <p class="overlay-text">Nuno模写</p>
               </div>
               <!--overlayここまで-->
             </div>
@@ -201,7 +254,7 @@
         <div class="service-items">
     
           <!--service-itemここから-->
-          <div class="service-item">
+          <div class="service-item wow fadeIn" data-wow-offset="200">
             <div class="service-item-logo">
               <i class="fas fa-code"></i>
             </div>
@@ -214,7 +267,7 @@
           </div>
           <!--service-itemここまで-->
           <!--service-itemここから-->
-          <div class="service-item">
+          <div class="service-item wow fadeIn" data-wow-offset="200">
             <div class="service-item-logo">
               <i class="fas fa-laptop-code"></i>
             </div>
@@ -227,7 +280,7 @@
           </div>
           <!--service-itemここまで-->
           <!--service-itemここから-->
-          <div class="service-item">
+          <div class="service-item wow fadeIn" data-wow-offset="200">
             <div class="service-item-logo">
               <i class="fab fa-wordpress"></i>
             </div>
@@ -337,7 +390,7 @@
 
       <div class="btn">
         <div class="btn-cover">ご連絡はこちら</div>
-        <a href="https://twitter.com/tanshiokoki73">ご連絡はこちら</a>
+        <a href="https://twitter.com/tanshiokoki73" target="_blank">ご連絡はこちら</a>
       </div>
 
     </div> <!--inner-->
@@ -346,8 +399,8 @@
   <!--フッターここから-->
   <footer>
     <div class="sns-container">
-      <a href="https://twitter.com/tanshiokoki73"><i class="fab fa-twitter fa-2x"></i></a>
-      <a href="https://github.com/"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://twitter.com/tanshiokoki73" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="https://github.com/" target="_blank"><i class="fab fa-github fa-2x"></i></a>
     </div>
       &copy; 2020. UK Portfolio.
       <div id="to-top" class="to-top">
@@ -356,7 +409,7 @@
   </footer>
   <!--フッターここまで-->
   <!--jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
   <!--wow-->
   <script src="js/wow.min.js"></script>
   <script src="js/wow_start.js"></script>

@@ -4,7 +4,7 @@
   background-color: $mainColor;
   &-title{
     @include font(80);
-    font-family: $titleBackFont;
+    font-family: $titleBackFont, $titleBackFontTwo, $titleBackFontSb, $titleBackFontSec;
     opacity: 0.3;
     letter-spacing: 40px;
     line-height: 80px;

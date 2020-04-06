@@ -24,6 +24,7 @@
                 0px 0px 40px lighten($strongColor, 10%),
                 0px 0px 60px $strongColor;
     animation: flash 5s linear infinite;
+    -webkit-animation: flash 5s linear infinite;
   }
   &-sbtitle{
     @include font(30);
@@ -55,6 +56,47 @@
 }
 
 @keyframes flash{
+  9%, 12%, 79%, 82%, 81%, 84%{
+    opacity: 1;
+  }
+  50%{
+    text-shadow: 
+                0px 0px 30px #fff,
+                0px 0px 50px lighten($strongColor, 30%),
+                0px 0px 70px lighten($strongColor, 20%),
+                0px 0px 90px lighten($strongColor, 10%),
+                0px 0px 100px $strongColor;
+  }
+  0%, 100%{
+    opacity: 1;
+    text-shadow: 
+                0px 0px 5px #fff,
+                0px 0px 10px lighten($strongColor, 30%),
+                0px 0px 20px lighten($strongColor, 20%),
+                0px 0px 40px lighten($strongColor, 10%),
+                0px 0px 60px $strongColor,
+                10px 10px 10px lighten($strongColor, 30%),
+                10px 10px 20px lighten($strongColor, 20%),
+                10px 10px 40px lighten($strongColor, 10%),
+                10px 10px 60px $strongColor,
+                -10px -10px 10px lighten($strongColor, 30%),
+                -10px -10px 20px lighten($strongColor, 20%),
+                -10px -10px 40px lighten($strongColor, 10%),
+                -10px -10px 60px $strongColor,
+                10px -10px 10px lighten($strongColor, 30%),
+                10px -10px 20px lighten($strongColor, 20%),
+                10px -10px 40px lighten($strongColor, 10%),
+                10px -10px 60px $strongColor,
+                -10px 10px 10px lighten($strongColor, 30%),
+                -10px 10px 20px lighten($strongColor, 20%),
+                -10px 10px 40px lighten($strongColor, 10%),
+                -10px 10px 60px $strongColor;
+  }
+  10%, 80%, 82%{
+    opacity: 0.2;
+  }
+}
+@-webkit-keyframes flash{
   9%, 12%, 79%, 82%, 81%, 84%{
     opacity: 1;
   }

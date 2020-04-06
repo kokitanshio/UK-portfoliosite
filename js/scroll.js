@@ -14,7 +14,7 @@ $(function () {
     $(window).on('scroll', function () {
       if ($(this).scrollTop() > $headerTop) { //スクロール高さがヘッダー高さを超えたら表示
         $('#to-top').fadeIn();
-      } else { 超えなかったら非表示
+      } else { //超えなかったら非表示
         $('#to-top').fadeOut();
       }
     });

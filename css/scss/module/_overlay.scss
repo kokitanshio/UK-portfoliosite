@@ -4,6 +4,8 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background: -webkit-linear-gradient(right, $keyColor, $strongColor);
+  background: -moz-linear-gradient(right, $keyColor, $strongColor);
   background: linear-gradient(to top left, $keyColor, $strongColor);
   opacity: 0;
   transform: scale(0.7);

@@ -22,6 +22,8 @@
       right: 2px;
       width: 1px;
       height: 40px;
+      background: -webkit-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0.1));
+      background: -moz-linear-gradient(bottom, rgba(255,255,255,1), rgba(255,255,255,0.1));
       background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0.1));
       animation: fallLight 2.5s linear 0s infinite;
     }

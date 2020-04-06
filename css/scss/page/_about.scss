@@ -1,6 +1,8 @@
 .about{
-  background-image: url(../img/about-me.jpg);
+  background-image: url(../img/about-me2.jpg);
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-position: center;
   background-attachment: fixed;
   &-text{
@@ -21,7 +23,7 @@
         margin-bottom: 20px;
         b{
           @include font(16);
-          font-family: $nameFont;
+          font-family: $nameFont, $nameFontSb, $nameFontSec;
           color: $strongColor;
         }
         i{

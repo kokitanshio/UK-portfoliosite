@@ -37,6 +37,8 @@ footer{
     color: $strongColor;
   }
   &:hover::before{
+    background: -webkit-linear-gradient(top, $strongColor, transparent);
+    background: -moz-linear-gradient(top, $strongColor, transparent);
     background: linear-gradient(to bottom, $strongColor, transparent);
   }
   &::before{
@@ -47,6 +49,8 @@ footer{
     height: 25px;
     left: 0;
     bottom: -35px;
+    background: -webkit-linear-gradient(top, #fff, transparent);
+    background: -moz-linear-gradient(top, #fff, transparent);
     background: linear-gradient(to bottom, #fff, transparent);
     animation: toTop 2s linear infinite;
   }

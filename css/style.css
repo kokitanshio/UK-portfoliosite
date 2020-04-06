@@ -356,8 +356,6 @@ body {
   text-align: center;
   width: 250px;
   height: 250px;
-  border: 1px solid #000;
-  border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -385,12 +383,28 @@ body {
   font-size: 30px;
   font-size: 1.875rem;
   color: #000;
+  transition: all 1.5s linear;
+  text-shadow: 0 0 5px #fff, 0 0 10px #333333;
 }
 
 .top-logo-text {
   font-size: 24px;
   font-size: 1.5rem;
   color: #000;
+  transition: all 1.5s linear;
+  text-shadow: 0 0 5px #fff, 0 0 10px #333333;
+}
+
+.top-logo-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #000;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #ccc;
 }
 
 @keyframes flash {
@@ -590,16 +604,6 @@ body {
   }
 }
 
-.service-item::before {
-  position: absolute;
-  display: block;
-  content: "";
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background-color: #333333;
-}
-
 .work-item {
   display: block;
   margin: 10px;
@@ -665,16 +669,31 @@ body {
   overflow: hidden;
   line-height: 50px;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.1);
-  transition: all 0.6s ease;
-  -webkit-transition: all 0.6s ease;
-  -moz-transition: all 0.6s ease;
+  background-color: #ff3333;
+  color: #ffffff !important;
+}
+
+.btn:hover a {
+  opacity: 0;
+}
+
+.btn-cover {
+  width: 100%;
+  text-align: center;
 }
 
 .btn a {
   display: block;
+  position: absolute;
+  background-color: #a9a9a9;
   width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   text-align: center;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
 }
 
 .btn::before, .btn::after,
@@ -683,6 +702,7 @@ body {
   content: "";
   position: absolute;
   background: #ff3333;
+  z-index: 1;
 }
 
 .btn::before {
@@ -698,7 +718,7 @@ body {
   right: 0;
   width: 1px;
   height: 50px;
-  animation: bottomAnim 1.5s linear 1.2s infinite;
+  animation: bottomAnim 1.5s linear .75s infinite;
 }
 
 .btn a::before {
@@ -753,8 +773,143 @@ body {
   }
 }
 
-.btn :hover {
-  background: #ff3333;
+.load {
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 998;
+}
+
+.load-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #333333;
+}
+
+.load-top {
+  position: absolute;
+  top: calc(50% - 35px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  font-family: "Baskerville";
+  font-size: 80px;
+  font-size: 5rem;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 767px) {
+  .load-top {
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -75%);
+  }
+}
+
+.load-top span {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0 5px #fff, 0 0 10px #e6e6e6;
+}
+
+.load-top::before, .load-top::after,
+.load-top span::before,
+.load-top span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 999;
+}
+
+.load-top::before {
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  right: -250px;
+  background: linear-gradient(to right, #fff, transparent);
+  animation: loadRight 1.5s linear .75s infinite;
+}
+
+.load-top::after {
+  width: 1px;
+  height: 100%;
+  top: -250px;
+  right: 0;
+  background: linear-gradient(to top, #fff, transparent);
+  animation: loadTop 1.5s linear 0s infinite;
+}
+
+.load-top span::before {
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: -250px;
+  background: linear-gradient(to left, #fff, transparent);
+  animation: loadLeft 1.5s linear .75s infinite;
+}
+
+.load-top span::after {
+  width: 1px;
+  height: 100%;
+  left: 0;
+  bottom: -250px;
+  background: linear-gradient(to bottom, #fff, transparent);
+  animation: loadBottom 1.5s linear 0s infinite;
+}
+
+@keyframes loadRight {
+  0% {
+    right: -250px;
+  }
+  100% {
+    right: 250px;
+  }
+}
+
+@keyframes loadTop {
+  0% {
+    top: -250px;
+  }
+  100% {
+    top: 250px;
+  }
+}
+
+@keyframes loadLeft {
+  0% {
+    left: -250px;
+  }
+  100% {
+    left: 250px;
+  }
+}
+
+@keyframes loadBottom {
+  0% {
+    bottom: -250px;
+  }
+  100% {
+    bottom: 250px;
+  }
+}
+
+.logo_back {
+  transform: translateY(80%);
+  opacity: 0;
 }
 
 .top {
@@ -808,18 +963,21 @@ header .header-list {
   }
 }
 
-header .header-list li a {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 20px;
+header .header-list li {
   transition: all 0.6s ease;
   -webkit-transition: all 0.6s ease;
   -moz-transition: all 0.6s ease;
 }
 
-header .header-list li a:hover {
+header .header-list li:hover {
   background-color: #ff3333;
+}
+
+header .header-list li a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
 }
 
 header .header-list li + li {
@@ -929,8 +1087,80 @@ header .header-sp-list li a i {
   transform: rotate(-45deg);
 }
 
+.scroll_color {
+  background-color: #ff3333;
+}
+
+.work {
+  background-color: #333333;
+}
+
+.work-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 0 120px;
+}
+
+.service {
+  position: relative;
+  background-color: #cccccc;
+}
+
+.service::before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  border-right: 100vw solid #333333;
+  border-bottom: 200px solid #cccccc;
+}
+
+@media screen and (max-width: 767px) {
+  .service::before {
+    border-bottom: 150px solid #333333;
+  }
+}
+
+.service-wrapper {
+  position: relative;
+  margin: 140px 0 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .service-wrapper {
+    margin: 100px 0;
+  }
+}
+
+.service-wrapper::before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  border-left: 100vw solid #333333;
+  border-top: 200px solid #cccccc;
+}
+
+@media screen and (max-width: 767px) {
+  .service-wrapper::before {
+    border-top: 200px solid #333333;
+  }
+}
+
+.service-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  .service-items {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+}
+
 .about {
-  background-image: url(../img/about-pc.jpg);
+  background-image: url(../img/about-me.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -995,74 +1225,6 @@ header .header-sp-list li a i {
   text-align: center;
 }
 
-.service {
-  position: relative;
-  background-color: #cccccc;
-}
-
-.service::before {
-  content: "";
-  position: absolute;
-  top: 80px;
-  border-right: 100vw solid #333333;
-  border-bottom: 200px solid #cccccc;
-}
-
-@media screen and (max-width: 767px) {
-  .service::before {
-    border-bottom: 150px solid #333333;
-  }
-}
-
-.service-wrapper {
-  position: relative;
-  margin: 140px 0 100px;
-}
-
-@media screen and (max-width: 767px) {
-  .service-wrapper {
-    margin: 100px 0;
-  }
-}
-
-.service-wrapper::before {
-  content: "";
-  position: absolute;
-  bottom: -100px;
-  border-left: 100vw solid #333333;
-  border-top: 200px solid #cccccc;
-}
-
-@media screen and (max-width: 767px) {
-  .service-wrapper::before {
-    border-top: 200px solid #333333;
-  }
-}
-
-.service-items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 80px;
-}
-
-@media screen and (max-width: 767px) {
-  .service-items {
-    flex-direction: column;
-    margin-bottom: 30px;
-  }
-}
-
-.work {
-  background-color: #333333;
-}
-
-.work-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 80px 0 120px;
-}
-
 .contact {
   background-color: #333333;
   padding-bottom: 100px;
@@ -1097,4 +1259,51 @@ footer .sns-container i {
 
 footer .sns-container i:hover {
   color: #ff3333;
+}
+
+.to-top {
+  display: none;
+  position: fixed;
+  height: 50px;
+  right: 50px;
+  bottom: 35px;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.8);
+  writing-mode: vertical-rl;
+  font-size: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  text-shadow: 0 0 5px #fff, 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.to-top:hover {
+  color: #ff3333;
+}
+
+.to-top:hover::before {
+  background: linear-gradient(to bottom, #ff3333, transparent);
+}
+
+.to-top::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 25px;
+  left: 0;
+  bottom: -35px;
+  background: linear-gradient(to bottom, #fff, transparent);
+  animation: toTop 2s linear infinite;
+}
+
+@keyframes toTop {
+  0% {
+    bottom: -35px;
+  }
+  100% {
+    bottom: 85px;
+  }
 }

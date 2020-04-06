@@ -20,15 +20,15 @@ header{
       display: none;
     }
     li{
+      @include trans;
+      &:hover{
+        background-color: $strongColor;
+      }
       a{
         display: flex;
         align-items: center;
         height: 100%;
         padding: 20px;
-        @include trans;
-        &:hover{
-          background-color: $strongColor;
-        }
       }
       &+li{
         margin-left: 10px;
@@ -119,4 +119,9 @@ header{
 .toggle_three{
   top: 40px;
   transform: rotate(-45deg);
+}
+
+//jsスクロール用class
+.scroll_color{
+  background-color: $strongColor;
 }

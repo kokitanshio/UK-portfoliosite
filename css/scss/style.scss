@@ -5,6 +5,7 @@
 @import "mixin/font";
 @import "mixin/transition";
 @import "mixin/card";
+@import "mixin/uklogo";
 @import "base/base";
 @import "module/inner";
 @import "module/top-logo";
@@ -14,10 +15,11 @@
 @import "module/work-item";
 @import "module/overlay";
 @import "module/btn";
+@import "page/load";
 @import "page/top";
 @import "page/header";
-@import "page/about";
-@import "page/service";
 @import "page/work";
+@import "page/service";
+@import "page/about";
 @import "page/contact";
 @import "page/footer";

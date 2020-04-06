@@ -7,8 +7,6 @@
   text-align: center;
   width: 250px;
   height: 250px;
-  border: 1px solid #000;
-  border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,10 +16,7 @@
     transform: translate(-50%, -80%);
   }
   &-title{
-    font-family: $logoTopFont;
-    @include font(80);
-    font-weight: normal;
-    color: $whiteColor;
+    @include uk;
     text-shadow: 
                 0px 0px 5px #fff,
                 0px 0px 10px lighten($strongColor, 30%),
@@ -33,10 +28,29 @@
   &-sbtitle{
     @include font(30);
     color: #000;
+    transition: all 1.5s linear;
+    text-shadow:
+                0 0 5px #fff,
+                0 0 10px lighten(#000, 20%);
   }
   &-text{
     @include font(24);
     color: #000;
+    transition: all 1.5s linear;
+    text-shadow:
+                0 0 5px #fff,
+                0 0 10px lighten(#000, 20%);
+  }
+  &-circle{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #000;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #ccc;
   }
 }
 

@@ -21,6 +21,13 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!--ローディング画面ここから-->
+  <div id="load" class="load">
+    <div id="load_back" class="load-back"></div>
+    <div class="load-top"><span>UK</span></div>
+  </div>
+  <!--ローディング画面ここまで-->
+
   <!--トップここから-->
   <section id="top" class="top">
     <video src="img/top-video.mp4" autoplay muted loop playsinline class="top-video"></video>
@@ -29,8 +36,9 @@
       <!--top-logoここから-->
       <div class="top-logo">
         <h1 class="top-logo-title">UK</h1>
-        <p class="top-logo-sbtitle">PORTFOLIO</p>
-        <div class="top-logo-text">Web Create Service</div>
+        <p id="logoSb" class="top-logo-sbtitle">PORTFOLIO</p>
+        <div id="logoText" class="top-logo-text">Web Create Service</div>
+        <div id="logoCircle" class="top-logo-circle"></div>
       </div>
       <!--top-logoここまで-->
 
@@ -235,7 +243,10 @@
         </div>
         <!--service-itemsここまで-->
         
-        <div class="btn"><a href="#">詳しい料金・納期など</a></div>
+        <div class="btn">
+          <div class="btn-cover">すみません準備中です</div>
+          <a href="#">詳しい料金・納期など</a>
+        </div>
       </div> <!--inner-->
 
     </div> <!--service-wrapper-->
@@ -293,7 +304,10 @@
             </div>
           </div>
         </div>
-        <div class="btn"><a href="#">詳しいプロフィール</a></div>
+        <div class="btn">
+          <div class="btn-cover">すみません準備中です</div>
+          <a href="#">詳しいプロフィール</a>
+        </div>
       </div>
       <!--about-textここから-->
   
@@ -321,7 +335,10 @@
         お気軽にお問い合わせください。
       </div>
 
-      <div class="btn"><a href="https://twitter.com/tanshiokoki73">ご連絡はこちら</a></div>
+      <div class="btn">
+        <div class="btn-cover">ご連絡はこちら</div>
+        <a href="https://twitter.com/tanshiokoki73">ご連絡はこちら</a>
+      </div>
 
     </div> <!--inner-->
   </section>
@@ -333,18 +350,23 @@
       <a href="https://github.com/"><i class="fab fa-github fa-2x"></i></a>
     </div>
       &copy; 2020. UK Portfolio.
+      <div id="to-top" class="to-top">
+        TOPへ
+      </div>
   </footer>
   <!--フッターここまで-->
   <!--jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--wow-->
+  <script src="js/wow.min.js"></script>
+  <script src="js/wow_start.js"></script>
+  <!--ローディングとtop-logoのJS-->
+  <script src="js/load.js"></script>
   <!--headerのJS-->
   <script src="js/header.js"></script>
   <!--twitterアイコンのJS-->
   <script src="js/twitter.js"></script>
   <!--スクロール系JS-->
   <script src="js/scroll.js"></script>
-  <!--wow-->
-  <script src="js/wow.min.js"></script>
-  <script src="js/wow_start.js"></script>
 </body>
 </html>

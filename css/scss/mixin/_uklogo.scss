@@ -1,0 +1,6 @@
+@mixin uk {
+  font-family: $logoTopFont;
+  @include font(80);
+  font-weight: normal;
+  color: $whiteColor;
+}

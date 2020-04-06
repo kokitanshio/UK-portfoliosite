@@ -1,0 +1,104 @@
+.load{
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 998;
+  &-back{
+    position: absolute;
+    top: 0;left: 0;right: 0;bottom: 0;
+    background-color: $mainColor;
+  }
+  &-top{
+    position: absolute;
+    top: calc(50% - 35px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    @include uk;
+    @include mq(sp){
+      width: 200px;
+      height: 200px;
+      transform: translate(-50%, -75%);
+    }
+    span{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-shadow:
+                  0 0 5px #fff,
+                  0 0 10px darken(#fff, 10%)
+    }
+    &::before,
+    &::after,
+    span::before,
+    span::after{
+      content:"";
+      display: block;
+      position: absolute;
+      z-index: 999;
+    }
+    &::before{
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      right: -250px;
+      background: linear-gradient(to right, #fff, transparent);
+      animation: loadRight 1.5s linear .75s infinite;
+    }
+    &::after{
+      width: 1px;
+      height: 100%;
+      top: -250px;
+      right: 0;
+      background: linear-gradient(to top, #fff, transparent);
+      animation: loadTop 1.5s linear 0s infinite;
+    }
+    span::before{
+      width: 100%;
+      height: 1px;
+      top: 0;
+      left: -250px;
+      background: linear-gradient(to left, #fff, transparent);
+      animation: loadLeft 1.5s linear .75s infinite;
+    }
+    span::after{
+      width: 1px;
+      height: 100%;
+      left: 0;
+      bottom: -250px;
+      background: linear-gradient(to bottom, #fff, transparent);
+      animation: loadBottom 1.5s linear 0s infinite;
+    }
+    @keyframes loadRight {
+      0%{right:-250px;}
+      100%{right: 250px;}
+    }
+    @keyframes loadTop {
+      0%{top:-250px;}
+      100%{top: 250px;}
+    }
+    @keyframes loadLeft {
+      0%{left:-250px;}
+      100%{left: 250px;}
+    }
+    @keyframes loadBottom {
+      0%{bottom:-250px;}
+      100%{bottom: 250px;}
+    }
+  }
+}
+
+//logo.js用クラス
+.logo_back{
+  transform: translateY(80%);
+  opacity: 0;
+}

@@ -16,3 +16,42 @@ footer{
     }
   }
 }
+
+//to-top
+.to-top{
+  display: none;
+  position: fixed;
+  height: 50px;
+  right: 50px;
+  bottom: 35px;
+  overflow: hidden;
+  color: $whiteColor;
+  writing-mode: vertical-rl;
+  @include font(16);
+  cursor: pointer;
+  @include trans;
+  text-shadow: 
+              0 0 5px #fff,
+              0 0 10px $whiteColor;
+  &:hover{
+    color: $strongColor;
+  }
+  &:hover::before{
+    background: linear-gradient(to bottom, $strongColor, transparent);
+  }
+  &::before{
+    display: block;
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 25px;
+    left: 0;
+    bottom: -35px;
+    background: linear-gradient(to bottom, #fff, transparent);
+    animation: toTop 2s linear infinite;
+  }
+  @keyframes toTop {
+    0%{bottom:-35px;}
+    100%{bottom:85px;}
+  }
+}

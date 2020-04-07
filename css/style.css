@@ -330,6 +330,11 @@ img {
 body {
   font-family: "Arial", "ヒラギノ明朝 ProN", sans-serif;
   color: #ffffff;
+  overflow: scroll;
+}
+
+html {
+  overflow: hidden;
 }
 
 @media screen and (max-width: 767px) {
@@ -1294,7 +1299,11 @@ header .header-list li + li {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-position: center;
+  -webkit-background-position: center;
+  -moz-background-position: center;
   background-attachment: fixed;
+  -webkit-background-attachment: fixed;
+  -moz-background-attachment: fixed;
 }
 
 .about-text {

@@ -298,9 +298,11 @@
   body{
     font-family:$mainEngFont, $mainJapFont, sans-serif;
     color: $fontMain;
+    overflow: scroll;
   }
   html{
     @include mq(sp){
       font-size: 12px;
     }
+    overflow: hidden;
   }

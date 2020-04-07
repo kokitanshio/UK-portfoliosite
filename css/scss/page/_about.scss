@@ -4,7 +4,11 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-position: center;
+  -webkit-background-position: center;
+  -moz-background-position: center;
   background-attachment: fixed;
+  -webkit-background-attachment: fixed;
+  -moz-background-attachment: fixed;
   &-text{
     @include card;
     padding: 40px 20px;

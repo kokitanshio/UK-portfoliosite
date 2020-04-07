@@ -2,6 +2,8 @@
   height: 100vh;
   width: 100%;
   position: relative;
+  //追加
+  overflow: hidden;
   &-wrapper{
     position: absolute;
     top: 0;
@@ -11,11 +13,13 @@
   }
   &-video{
     width: 100%;
-    height: 100%;
+    height: 110vh;
     object-fit: cover;
     object-position: center;
-    position: fixed;
-    z-index: -1;
+    //position: fixed;
+    //z-index: -1;
     bottom: 0;
+    //追加
+    transform: translateY(-5%);
   }
 }

@@ -9,23 +9,20 @@ $(function () {
   $('.top-text').css({ 'display': 'none' }); //top-textを消しておく
 
   $(window).on('load', function () { //画面読み込み時に実行
-
-    setTimeout(stopload, 10000); //10秒経ったらロード画面非表示に
     
     setTimeout(loading, 1500); //画面読み込み後1.5s後にローディング処理実行
-
+    
     setTimeout(logo, 1600); //画面読み込み後1.6s後にロゴ処理実行
+    
+    setTimeout(stopload, 10000); //10秒経ったらロード画面非表示に
 
 
     function loading() { //ローディング処理の関数
-      $.when(
-        $('#load_back').animate({ //グレー背景を白にする
-          'opacity': '0',
-        }),
-        $('#load').delay(200).fadeOut(2000) //load画面をフェードアウト
-      ).done(function () { //ロード画面フェードアウト後にスクロール可能に
-        $('body').css({ 'overflow': 'scroll' }); //bodyをスクロール可能に
+      $('#load_back').animate({ //グレー背景を白にする
+        'opacity': '0',
       });
+      $('#load').delay(200).fadeOut(2000); //load画面をフェードアウト
+      $('body').css({ 'overflow': 'initial' }); //bodyをスクロール可能に
     } //ローディング処理の関数終了
 
     function logo() { //top-logoの関数
@@ -40,7 +37,7 @@ $(function () {
 
     function stopload() { //ロード画面終了の関数
       $('#load').css({ 'display': 'none' });
-      $('body').css({ 'overflow': 'scroll' });
+      $('body').css({ 'overflow': 'initial' });
     }
     
   });

@@ -1,8 +1,5 @@
 $(function () {
 
-  var $headerTop = $('#header').offset().top; //headerのウインドウ高さ;
-  var $headerHeight = $('#header').outerHeight(); //headerそのものの高さ
-
   $(window).on('load resize', function () { //縦幅、横幅変わるたびに変数をリサイズ
 
     //-------------リサイズ要な変数たち----------------
@@ -12,17 +9,11 @@ $(function () {
     var $aboutHeight = $('#about').offset().top - 81; //aboutのウインドウ高さ
     var $contactHeight = $('#contact').offset().top - 81; //contactのウインドウ高さ
     //-------------リサイズ要な変数たち----------------
-      
-    // console.log($windowWidth);
-    // console.log($headerTop);
-    // console.log($workHeight);
-    // console.log($serviceHeight);
-    // console.log($aboutHeight);
-    // console.log($contactHeight);
+
 
     //PC/SP共通
     //header固定に関する処理
-    $(window).on('scroll', function () { 
+    $(window).on('scroll', function () {
       if ($(this).scrollTop() > $headerTop) { //ウインドウスクロールがheaderまでのウインドウ高さを超えたらheader固定
         $('.pc-header').addClass('header_fixed');
       } else { //ウインドウスクロールがheaderまでのウインドウ高さ+headerの高さを超えないとheader固定しない
@@ -52,18 +43,18 @@ $(function () {
       } else { //上記以外は色なし
         $('.header-list li').removeClass('scroll_color');
       }
-    });
-    
-    //SPのヘッダー
-    //トグル表示処理
-    $(window).on('scroll', function () { 
-      if ($(this).scrollTop() > $headerTop) { //スクロール高さがheader高さ超えたらトグル表示
+      
+      //SPのヘッダー
+      //トグル表示処理
+      if ($windowTop > $headerTop) { //スクロール高さがheader高さ超えたらトグル表示
         $('#toggle').fadeIn();
+        //console.log('表示');
       } else { //超えなきゃ非表示
         $('#toggle').fadeOut();
+        //console.log('非表示');
       }
+      
     });
-    
   });
   
   

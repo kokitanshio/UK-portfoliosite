@@ -576,7 +576,7 @@ body {
 .service-item {
   background-color: #fff;
   color: #555;
-  box-shadow: 0px 0px 20px 0px;
+  box-shadow: 0px 0px 20px 0px #000;
   position: relative;
   width: 30%;
   padding: 40px 10px 20px;
@@ -694,7 +694,7 @@ body {
   color: #ffffff !important;
 }
 
-.btn:hover a {
+.btn:hover .btn-link {
   opacity: 0;
 }
 
@@ -703,7 +703,7 @@ body {
   text-align: center;
 }
 
-.btn a {
+.btn .btn-link {
   display: block;
   position: absolute;
   background-color: #a9a9a9;
@@ -718,8 +718,8 @@ body {
 }
 
 .btn::before, .btn::after,
-.btn a::before,
-.btn a::after {
+.btn .btn-cover::before,
+.btn .btn-cover::after {
   content: "";
   position: absolute;
   background: #ff3333;
@@ -744,7 +744,7 @@ body {
   -webkit-animation: bottomAnim 1.5s linear 1.2s infinite;
 }
 
-.btn a::before {
+.btn .btn-cover::before {
   top: 0;
   right: -50px;
   width: 50px;
@@ -753,7 +753,7 @@ body {
   -webkit-animation: rightAnim 1.5s linear 0s infinite;
 }
 
-.btn a::after {
+.btn .btn-cover::after {
   top: -50px;
   left: 0;
   width: 1px;
@@ -1314,7 +1314,7 @@ header .header-list li + li {
 .about-text {
   background-color: #fff;
   color: #555;
-  box-shadow: 0px 0px 20px 0px;
+  box-shadow: 0px 0px 20px 0px #000;
   padding: 40px 20px;
   width: 450px;
   margin: 50px 0 50px auto;
@@ -1377,7 +1377,7 @@ header .header-list li + li {
 
 .contact-text {
   text-align: center;
-  padding: 80px 0;
+  padding: 50px 0;
   margin-top: 40px;
 }
 
@@ -1455,4 +1455,102 @@ footer .sns-container i:hover {
   100% {
     bottom: 85px;
   }
+}
+
+.price {
+  position: relative;
+  background-color: #333333;
+  overflow: hidden;
+}
+
+.price::before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 250px;
+  left: -45px;
+  transform: rotate(10deg);
+  background-color: #cccccc;
+  width: 2000px;
+  height: 250px;
+}
+
+@media screen and (max-width: 767px) {
+  .price::before {
+    transform: rotate(0);
+    height: 280px;
+    top: 200px;
+  }
+}
+
+.price-wrapper {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.price-wrapper-title {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-family: "凸版文久見出しゴシック";
+}
+
+.price-wrapper-text {
+  margin-bottom: 50px;
+}
+
+.price-wrapper table {
+  background-color: #fff;
+  color: #555;
+  box-shadow: 0px 0px 20px 0px #000;
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: left;
+  border: 1px solid #555;
+}
+
+.price-wrapper table tr {
+  height: 50px;
+}
+
+.price-wrapper table tr th {
+  padding-left: 10px;
+  background-color: #f6b483;
+  border: 1px solid #555;
+}
+
+.price-wrapper table tr td {
+  padding-left: 10px;
+  border: 1px solid #555;
+}
+
+.form {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.form input {
+  height: 50px;
+}
+
+.form textarea {
+  height: 200px;
+}
+
+.form-box {
+  background-color: #fff;
+  color: #555;
+  box-shadow: 0px 0px 20px 0px #000;
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #fff;
+}
+
+.form-box:focus {
+  outline: none;
 }

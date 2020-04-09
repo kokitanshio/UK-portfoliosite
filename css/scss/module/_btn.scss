@@ -7,14 +7,14 @@
   margin: 0 auto;
   background-color: $strongColor;
   color: $fontMain!important;
-  &:hover a{
+  &:hover .btn-link{
     opacity: 0;
   }
   &-cover{
     width: 100%;
     text-align: center;
   }
-  a{
+  .btn-link{
     display: block;
     position: absolute;
     background-color: #a9a9a9;
@@ -27,8 +27,8 @@
   }
   &::before,
   &::after,
-  a::before,
-  a::after{
+  .btn-cover::before,
+  .btn-cover::after{
     content:"";
     position: absolute;
     background: $strongColor;
@@ -50,7 +50,7 @@
     animation: bottomAnim 1.5s linear 1.2s infinite;
     -webkit-animation: bottomAnim 1.5s linear 1.2s infinite;
   }
-  a::before{
+  .btn-cover::before{
     top: 0;
     right: -50px;
     width: 50px;
@@ -58,7 +58,7 @@
     animation: rightAnim 1.5s linear 0s infinite;
     -webkit-animation: rightAnim 1.5s linear 0s infinite;
   }
-  a::after{
+  .btn-cover::after{
     top: -50px;
     left: 0;
     width: 1px;

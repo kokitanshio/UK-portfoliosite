@@ -1,0 +1,22 @@
+.form{
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  input{
+    height: 50px;
+  }
+  textarea{
+    height: 200px;
+  }
+  &-box{
+    @include card;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #fff;
+    &:focus{
+      outline: none;
+    }
+  }
+}

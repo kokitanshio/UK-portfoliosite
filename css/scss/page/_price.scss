@@ -1,0 +1,54 @@
+.price{
+  position: relative;
+  background-color: $mainColor;
+  overflow: hidden;
+  &::before{
+    position: absolute;
+    display: block;
+    content: "";
+    top: 250px;
+    left: -45px;
+    transform: rotate(10deg);
+    background-color: $subColor;
+    width: 2000px;
+    height: 250px;
+    @include mq(sp){
+      transform: rotate(0);
+      height: 280px;
+      top: 200px;
+    }
+  }
+  &-wrapper{
+    text-align: center;
+    padding: 80px 0;
+    &-title{
+      @include font(24);
+      font-family: $titleTopFont;
+    }
+    &-text{
+      margin-bottom: 50px;
+    }
+    table{
+      @include card;
+      width: 100%;
+      max-width: 800px;
+      margin: 50px auto;
+      table-layout: fixed;
+      border-collapse: collapse;
+      text-align: left;
+      border: 1px solid $fontSub;
+      tr{
+        height: 50px;
+        th{
+          padding-left: 10px;
+          background-color: $keyColor;
+          border: 1px solid $fontSub;
+        }
+        td{
+          padding-left: 10px;
+          border: 1px solid $fontSub;
+        }
+      }
+    }
+  }
+}

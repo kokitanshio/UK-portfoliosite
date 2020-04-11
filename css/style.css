@@ -1540,6 +1540,28 @@ footer .sns-container i:hover {
   height: 200px;
 }
 
+.form table {
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 0 24px;
+  word-break: break-all;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.form table th, .form table td {
+  padding: 10px 0;
+}
+
+.form table th {
+  vertical-align: top;
+}
+
+.form form + form {
+  margin-top: 20px;
+}
+
 .form-box {
   background-color: #fff;
   color: #555;

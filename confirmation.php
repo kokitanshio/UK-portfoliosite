@@ -1,3 +1,37 @@
+<?php
+//セッション開始
+session_start();
+
+//エスケープ関数を定義
+function h($s){
+  return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+}
+
+//SCRF対策
+if(isset($_POST['token'], $_SESSION['token'])){ //トークンがセットされている時
+  $token = $_POST['token'];
+  if($token !== $_SESSION['token']){
+    //contactページで設定されたトークンと送られてきたトークンが異なる場合終了
+    echo "不正なアクセスです！";
+    exit;
+  }
+}else{
+  //トークンが存在しない場合は処理を中止
+  echo "直接このページにはアクセスできません";
+  exit;
+}
+
+//POSTされたデータを変数に代入
+$name = $_POST['name'];
+$mail = $_POST['mail'];
+$message = $_POST['message'];
+
+$_SESSION['name'] = $name;
+$_SESSION['mail'] = $mail;
+$_SESSION['message'] = $message;
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -40,7 +74,7 @@
 <body>
   <!--ヘッダーここから-->
   <header id="header">
-  <!--PC用headerここから-->
+    <!--PC用headerここから-->
     <div class="pc-header">
       <nav class="inner header">
         <div class="header-logo">
@@ -49,9 +83,9 @@
         <!--PC用header-listここから-->
         <ul class="header-list">
           <li class="header-list-item"><a href="/">HOME</a></li>
-          <li class="header-list-item"><a href="#work">WORK</a></li>
+          <li class="header-list-item"><a href="#">WORK</a></li>
           <li class="header-list-item"><a href="service.html">SERVICE</a></li>
-          <li class="header-list-item"><a href="#about">ABOUT</a></li>
+          <li class="header-list-item"><a href="#">ABOUT</a></li>
           <li class="header-list-item"><a href="contact.php">CONTACT</a></li>
           <li class="header-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a></li>
         </ul>
@@ -59,7 +93,7 @@
       </nav>
       <!--PC用headerここまで-->
     </div>
-  
+    
     <!--SP用headerここから-->
     <div class="sp-header">
       <!--SP用headerはheaderとして残さず最初から右上にfixedしたトグルボタンを表示する形にした-->
@@ -71,7 +105,7 @@
         <span id="toggle_three" class="toggle_three_active"></span>
       </div>
       <!--トグルボタン-->
-  
+    
       <!--トグルクリックでモーダル-->
       <div class="header-sp">
         <nav>
@@ -85,51 +119,61 @@
             <li class="header-sp-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter_sp"><i class="fab fa-twitter"></i></a></li>
           </ul>
           <!--SP用header-listここまで-->
-      
+        
         </nav>
       </div>
       <!--トグルクリックでモーダル-->
     </div>
-      <!--sp用headerここまで-->
+    <!--sp用headerここまで-->
   </header>
   <!--ヘッダーここまで-->
 
-  <!--プライスここから-->
-  <section class="price">
-
+  <!--コンタクトここから-->
+  <section class="contact">
     <!--タイトルバナーここから-->
     <div class="banner">
       <div class="inner">
-        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-service">SERVICE</h2>
-        <div data-wow-delay="0.4s" class="wow slideInRight banner-text banner-text-service">私にできること</div>
+        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-contact">CONFIRMATION</h2>
+        <div data-wow-delay="0.4s" class="wow slideInRight banner-text banner-text-contact">確認画面</div>
       </div>
     </div>
     <!--タイトルバナーここまで-->
-    <div class="inner">
-      <div class="price-wrapper">
-        <div class="price-wrapper-title wow fadeIn">価格表</div>
-        <table class="wow fadeInUp" data-wow-duration="3s">
-          <tbody>
-            <tr><th>コーディング(１P)</th><td colspan="2">6000円〜</td></tr>
-            <tr><th>ランディングページ作成</th><td colspan="2">15000円〜</td></tr>
-            <tr><th>ホームページ作成</th><td colspan="2">50000円〜</td></tr>
-            <tr><th>WordPress導入</th><td colspan="2">50000円〜</td></tr>
-          </tbody>
-        </table>
-        <div class="price-wrapper-text wow fadeIn">
-          上記金額は目安になります。<br>
-          詳細はお問い合わせ時にご確認ください。<br>
-          些細なことでも気軽にご相談ください。
-        </div>
-        <div class="btn wow fadeInUp">
-          <div class="btn-cover">ご連絡はこちら</div>
-          <a class="btn-link" href="contact.php">ご連絡はこちら</a>
-        </div>
-      </div>
-    </div> <!--inner-->
 
+
+    <p class="contact-text wow fadeIn">
+      入力内容をご確認ください
+    </p>
+
+    <div class="form">
+      <table>
+        <tbody>
+          <tr>
+            <th>お名前・会社名：</th><td colspan="2"><?php echo h($name); ; ?></td>
+          </tr>
+          <tr>
+            <th>メールアドレス：</th><td colspan="2"><?php echo h($mail); ?></td>
+          </tr>
+          <tr>
+            <th>お問い合わせ内容：</th><td colspan="2"><?php echo h($message); ?></td>
+          </tr>
+        </tbody>
+      </table>
+      <form action="send.php" method="POST">
+        <div class="btn wow fadeInUp">
+          <div class="btn-cover">送信</div>
+          <input class="btn-link" type="submit" value="送信">
+          <input type="hidden" name="token" value="<?php echo h($token); ?>">
+        </div>
+      </form>
+      <form action="contact.php" method="POST">
+        <div class="btn wow fadeInUp">
+          <div class="btn-cover">戻る</div>
+          <input class="btn-link" type="submit" value="戻る">
+        </div>
+      </form>
+    </div>
   </section>
-  <!--プライスここまで-->
+  <!--コンタクトここまで-->
 
   <!--フッターここから-->
   <footer>
@@ -138,9 +182,9 @@
       <a href="https://github.com/kokitanshio" target="_blank"><i class="fab fa-github fa-2x"></i></a>
     </div>
       &copy; 2020. UK Portfolio.
-      <div id="to-top" class="to-top">
+    <div id="to-top" class="to-top">
         TOPへ
-      </div>
+    </div>
   </footer>
   <!--フッターここまで-->
   <!--jQuery-->
@@ -156,5 +200,6 @@
   <script src="js/twitter.js"></script>
   <!--スクロール系JS-->
   <script src="js/scroll.js"></script>
+
 </body>
 </html>

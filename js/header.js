@@ -2,7 +2,9 @@ $(function () {
 
   var $headerTop = $('#header').offset().top; //headerのウインドウ高さ 全て
 
-  if (document.URL.match("/index.html")) { //topページのみ
+  var url = location.href;
+  console.log(url);
+  if (url == "https://kokitanshio.com/" || url == "http://kokitanshio.com/") { //topページのみ
 
     $(window).on('scroll', function () { //topページのみ
     

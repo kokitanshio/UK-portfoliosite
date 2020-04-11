@@ -1,3 +1,102 @@
+<?php 
+//セッション開始
+session_start();
+
+//エスケープ関数を定義
+function h($s){
+  return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+}
+
+//SCRF対策
+if(isset($_POST['token'], $_SESSION['token'])){ //トークンがセットされている時
+  $token = $_POST['token'];
+  if($token !== $_SESSION['token']){
+    //contactページで設定されたトークンと送られてきたトークンが異なる場合終了
+    echo "不正なアクセスです！";
+    exit;
+  }
+}else{
+  //トークンが存在しない場合は処理を中止
+  echo "直接このページにはアクセスできません";
+  exit;
+}
+
+//セッション変数を変数に代入
+$name = h($_SESSION['name']);
+$mail = h($_SESSION['mail']);
+$message = h($_SESSION['message']);
+
+
+//ーーーーーーーメール本文作成ーーーーーーーーーー
+
+
+$mail_body_name = "お名前：".$name."\n\n";
+$mail_body_mail = "メールアドレス：".$mail."\n\n";
+$mail_body_message = "お問い合わせ内容：".$message."\n\n";
+$mail_body = $mail_body_name.$mail_body_mail.$mail_body_message;
+$title_me = "お問い合わせがありました。";
+$title_you = "お問い合わせありがとうございます。";
+//受信用メール
+$mail_body_me = "コンタクトページからお問い合わせを受信しました。\n\n".$mail_body;
+//送信ようメール
+$mail_body_you = $name."様"."\n"."お問い合わせありがとうございます。\n\n本メールは自動送信メールです。\n後ほど改めてご連絡いたします。\n\n－－－－以下、ご送信内容－－－－\n\n".$mail_body;
+
+//ーーーーーーーーーーーーーーーーーーーーーーーーー
+//ーーーーーーーメール送信処理ーーーーーーーーーー
+
+//mailvars.phpの内容
+//メールの宛先（To）の Email アドレス
+define('MAIL_TO', "info@xxxxx.com");
+//メールの宛先（To）の名前  
+define('MAIL_TO_NAME', "宛先の名前 ");
+//Cc の名前
+define('MAIL_CC', 'xxxx@xxxxxx.com');
+//Cc の名前
+define('MAIL_CC_NAME', 'Cc宛先名');
+//Bcc
+define('MAIL_BCC', 'xxxxx@xxxxx.com');
+//Return-Pathに指定するメールアドレス
+define('MAIL_RETURN_PATH', 'info@xxxxxx.com');
+//自動返信の返信先名前（自動返信を設定する場合）
+define('AUTO_REPLY_NAME', '返信先名前');
+
+//メールの宛先（名前<メールアドレス> の形式）。値は mailvars.php に記載
+$mailTo = mb_encode_mimeheader(MAIL_TO_NAME) ."<" . MAIL_TO. ">";
+//Return-Pathに指定するメールアドレス
+$returnMail = MAIL_RETURN_PATH; //
+//mbstringの日本語設定
+mb_language( 'ja' );
+mb_internal_encoding( 'UTF-8' );
+
+// 送信者情報（From ヘッダー）の設定
+$header = "From: " . mb_encode_mimeheader($name) ."<" . $mail. ">\n";
+//$header .= "Cc: " . mb_encode_mimeheader(MAIL_CC_NAME) ."<" . MAIL_CC.">\n";
+//$header .= "Bcc: <" . MAIL_BCC.">";
+
+//自分のアドレス
+$my_mail = "kokitan_73@icloud.com";
+
+//ーーーーーーーーーーーーーーーーーーーーーーーー
+
+//お問い合わせ受信
+$result = mb_send_mail($my_mail, $title_me, $mail_body_me);
+
+//メール結果送信
+if($result){ //お問い合わせの送信に成功したら
+  if(ini_get('safe_mode')){
+    //セーフモードがOnの時は第５引数が使えない
+    mb_send_mail($mail, $title_you, $mail_body_you, $header); //自動送信メールを送信
+    $_SESSION[] = array(); //セッション変数を消去
+    session_destroy(); //セッションを破棄
+  }else{
+    mb_send_mail($mail, $title_you, $mail_body_you, $header, '-f'.$returnMail); //自動送信メールを送信
+    $_SESSION[] = array(); //セッション変数を消去
+    session_destroy(); //セッションを破棄
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -40,7 +139,7 @@
 <body>
   <!--ヘッダーここから-->
   <header id="header">
-  <!--PC用headerここから-->
+    <!--PC用headerここから-->
     <div class="pc-header">
       <nav class="inner header">
         <div class="header-logo">
@@ -49,9 +148,9 @@
         <!--PC用header-listここから-->
         <ul class="header-list">
           <li class="header-list-item"><a href="/">HOME</a></li>
-          <li class="header-list-item"><a href="#work">WORK</a></li>
+          <li class="header-list-item"><a href="#">WORK</a></li>
           <li class="header-list-item"><a href="service.html">SERVICE</a></li>
-          <li class="header-list-item"><a href="#about">ABOUT</a></li>
+          <li class="header-list-item"><a href="#">ABOUT</a></li>
           <li class="header-list-item"><a href="contact.php">CONTACT</a></li>
           <li class="header-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a></li>
         </ul>
@@ -59,7 +158,7 @@
       </nav>
       <!--PC用headerここまで-->
     </div>
-  
+    
     <!--SP用headerここから-->
     <div class="sp-header">
       <!--SP用headerはheaderとして残さず最初から右上にfixedしたトグルボタンを表示する形にした-->
@@ -71,7 +170,7 @@
         <span id="toggle_three" class="toggle_three_active"></span>
       </div>
       <!--トグルボタン-->
-  
+    
       <!--トグルクリックでモーダル-->
       <div class="header-sp">
         <nav>
@@ -85,51 +184,52 @@
             <li class="header-sp-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter_sp"><i class="fab fa-twitter"></i></a></li>
           </ul>
           <!--SP用header-listここまで-->
-      
+        
         </nav>
       </div>
       <!--トグルクリックでモーダル-->
     </div>
-      <!--sp用headerここまで-->
+    <!--sp用headerここまで-->
   </header>
   <!--ヘッダーここまで-->
 
-  <!--プライスここから-->
-  <section class="price">
-
+  <!--コンタクトここから-->
+  <section class="contact">
     <!--タイトルバナーここから-->
     <div class="banner">
       <div class="inner">
-        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-service">SERVICE</h2>
-        <div data-wow-delay="0.4s" class="wow slideInRight banner-text banner-text-service">私にできること</div>
+        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-contact">COMPLETELY</h2>
+        <div data-wow-delay="0.4s" class="wow slideInRight banner-text banner-text-contact">送信完了</div>
       </div>
     </div>
     <!--タイトルバナーここまで-->
+
     <div class="inner">
-      <div class="price-wrapper">
-        <div class="price-wrapper-title wow fadeIn">価格表</div>
-        <table class="wow fadeInUp" data-wow-duration="3s">
-          <tbody>
-            <tr><th>コーディング(１P)</th><td colspan="2">6000円〜</td></tr>
-            <tr><th>ランディングページ作成</th><td colspan="2">15000円〜</td></tr>
-            <tr><th>ホームページ作成</th><td colspan="2">50000円〜</td></tr>
-            <tr><th>WordPress導入</th><td colspan="2">50000円〜</td></tr>
-          </tbody>
-        </table>
-        <div class="price-wrapper-text wow fadeIn">
-          上記金額は目安になります。<br>
-          詳細はお問い合わせ時にご確認ください。<br>
-          些細なことでも気軽にご相談ください。
-        </div>
+      <?php if($result): ?>
+      <p class="contact-text wow fadeIn">
+        <b>お問い合わせが送信されました。<b><br><br>
+        お問い合わせありがとうございます。<br>
+        原則１〜３営業日以内に返信いたしますが、<br>連絡がない場合はお手数ですが再度ご連絡ください。
+      </p>
+      <?php else: ?>
+      <p class="contact-text wow fadeIn">
+        <b>お問い合わせの送信に失敗しました<b><br><br>
+        申し訳ございませんが、Twitterにてお問い合わせいただくか<br>
+        しばらく経ってからもう一度お試しください。<br>
+        ご迷惑をかけて誠に申し訳ありませんが、よろしくお願いいたします。
+      </p>
+      <?php endif; ?>
+
+      <div class="form">
         <div class="btn wow fadeInUp">
-          <div class="btn-cover">ご連絡はこちら</div>
-          <a class="btn-link" href="contact.php">ご連絡はこちら</a>
+          <div class="btn-cover">HOMEに戻る</div>
+          <a class="btn-link" href="/">HOMEに戻る</a>
         </div>
       </div>
-    </div> <!--inner-->
 
+    </div>
   </section>
-  <!--プライスここまで-->
+  <!--コンタクトここまで-->
 
   <!--フッターここから-->
   <footer>
@@ -138,9 +238,9 @@
       <a href="https://github.com/kokitanshio" target="_blank"><i class="fab fa-github fa-2x"></i></a>
     </div>
       &copy; 2020. UK Portfolio.
-      <div id="to-top" class="to-top">
+    <div id="to-top" class="to-top">
         TOPへ
-      </div>
+    </div>
   </footer>
   <!--フッターここまで-->
   <!--jQuery-->
@@ -156,5 +256,6 @@
   <script src="js/twitter.js"></script>
   <!--スクロール系JS-->
   <script src="js/scroll.js"></script>
+
 </body>
 </html>

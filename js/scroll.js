@@ -1,6 +1,9 @@
 $(function () {
   var speed = 600;
     // スムーススクロール
+    var url = location.href;
+  if (url == "https://kokitanshio.com/" || url == "http://kokitanshio.com/") {
+    
     $('a[href^="#"]').click(function(){
       var href = $(this).attr("href");
       var target = $(href == "#" || href == "" ? 'html' : href);
@@ -25,4 +28,5 @@ $(function () {
         'scrollTop': 0
       }, speed);
     });
+  }
 })

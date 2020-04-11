@@ -8,6 +8,23 @@
   textarea{
     height: 200px;
   }
+  table{
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 0 24px;
+    word-break: break-all;
+    @include font(16);
+    th, td{
+      padding: 10px 0;
+    }
+    th{
+      vertical-align: top;
+    }
+  }
+  form + form{
+    margin-top: 20px;
+  }
   &-box{
     @include card;
     display: block;

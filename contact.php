@@ -1,3 +1,24 @@
+<?php
+//セッション開始
+session_start();
+
+// セッションIDを更新して変更(セッションハイジャック対策)
+session_regenerate_id(TRUE);
+
+// エスケープ関数を定義
+function h($s){
+  return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+}
+
+// CSRF対策
+if(!isset($_SESSION['token'])){
+  $_SESSION['token'] = sha1(uniqid(mt_rand(), TRUE));
+}
+// トークンを変数に代入
+$token = $_SESSION['token'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -40,7 +61,7 @@
 <body>
   <!--ヘッダーここから-->
   <header id="header">
-  <!--PC用headerここから-->
+    <!--PC用headerここから-->
     <div class="pc-header">
       <nav class="inner header">
         <div class="header-logo">
@@ -49,9 +70,9 @@
         <!--PC用header-listここから-->
         <ul class="header-list">
           <li class="header-list-item"><a href="/">HOME</a></li>
-          <li class="header-list-item"><a href="#work">WORK</a></li>
+          <li class="header-list-item"><a href="#">WORK</a></li>
           <li class="header-list-item"><a href="service.html">SERVICE</a></li>
-          <li class="header-list-item"><a href="#about">ABOUT</a></li>
+          <li class="header-list-item"><a href="#">ABOUT</a></li>
           <li class="header-list-item"><a href="contact.php">CONTACT</a></li>
           <li class="header-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a></li>
         </ul>
@@ -59,7 +80,7 @@
       </nav>
       <!--PC用headerここまで-->
     </div>
-  
+    
     <!--SP用headerここから-->
     <div class="sp-header">
       <!--SP用headerはheaderとして残さず最初から右上にfixedしたトグルボタンを表示する形にした-->
@@ -71,7 +92,7 @@
         <span id="toggle_three" class="toggle_three_active"></span>
       </div>
       <!--トグルボタン-->
-  
+    
       <!--トグルクリックでモーダル-->
       <div class="header-sp">
         <nav>
@@ -85,51 +106,46 @@
             <li class="header-sp-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter_sp"><i class="fab fa-twitter"></i></a></li>
           </ul>
           <!--SP用header-listここまで-->
-      
+        
         </nav>
       </div>
       <!--トグルクリックでモーダル-->
     </div>
-      <!--sp用headerここまで-->
+    <!--sp用headerここまで-->
   </header>
   <!--ヘッダーここまで-->
 
-  <!--プライスここから-->
-  <section class="price">
-
+  <!--コンタクトここから-->
+  <section class="contact">
     <!--タイトルバナーここから-->
     <div class="banner">
       <div class="inner">
-        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-service">SERVICE</h2>
-        <div data-wow-delay="0.4s" class="wow slideInRight banner-text banner-text-service">私にできること</div>
+        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-contact">CONTACT</h2>
+        <div data-wow-delay="0.4s" class="wow slideInRight banner-text banner-text-contact">お問い合わせ</div>
       </div>
     </div>
     <!--タイトルバナーここまで-->
-    <div class="inner">
-      <div class="price-wrapper">
-        <div class="price-wrapper-title wow fadeIn">価格表</div>
-        <table class="wow fadeInUp" data-wow-duration="3s">
-          <tbody>
-            <tr><th>コーディング(１P)</th><td colspan="2">6000円〜</td></tr>
-            <tr><th>ランディングページ作成</th><td colspan="2">15000円〜</td></tr>
-            <tr><th>ホームページ作成</th><td colspan="2">50000円〜</td></tr>
-            <tr><th>WordPress導入</th><td colspan="2">50000円〜</td></tr>
-          </tbody>
-        </table>
-        <div class="price-wrapper-text wow fadeIn">
-          上記金額は目安になります。<br>
-          詳細はお問い合わせ時にご確認ください。<br>
-          些細なことでも気軽にご相談ください。
-        </div>
-        <div class="btn wow fadeInUp">
-          <div class="btn-cover">ご連絡はこちら</div>
-          <a class="btn-link" href="contact.php">ご連絡はこちら</a>
-        </div>
-      </div>
-    </div> <!--inner-->
 
+    <div class="inner">
+      <p class="contact-text wow fadeIn">
+        お仕事のご依頼・ご相談など<br>お気軽にお問い合わせください<br>原則１〜３営業日以内に返信いたします
+      </p>
+
+      <form class="form" action="confirmation.php" method="POST">
+        <input class="form-box wow fadeInUp" type="text" name="name" id="name" placeholder="お名前・会社名" required>
+        <input class="form-box wow fadeInUp" data-wow-delay="0.1s" type="text" name="mail" id="mail" placeholder="メールアドレス" required>
+        <span><?php echo h($error); ?></span>
+        <textarea class="form-box wow fadeInUp" data-wow-delay="0.2s" name="message" id="message" cols="30" rows="10" placeholder="お問い合わせ内容" required></textarea>
+        <div class="btn wow fadeInUp">
+          <div class="btn-cover">確認</div>
+          <input class="btn-link" type="submit" value="確認">
+          <input type="hidden" name="token" value="<?php echo h($token); ?>">
+        </div>
+      </form>
+
+    </div>
   </section>
-  <!--プライスここまで-->
+  <!--コンタクトここまで-->
 
   <!--フッターここから-->
   <footer>
@@ -138,9 +154,6 @@
       <a href="https://github.com/kokitanshio" target="_blank"><i class="fab fa-github fa-2x"></i></a>
     </div>
       &copy; 2020. UK Portfolio.
-      <div id="to-top" class="to-top">
-        TOPへ
-      </div>
   </footer>
   <!--フッターここまで-->
   <!--jQuery-->
@@ -156,5 +169,6 @@
   <script src="js/twitter.js"></script>
   <!--スクロール系JS-->
   <script src="js/scroll.js"></script>
+
 </body>
 </html>

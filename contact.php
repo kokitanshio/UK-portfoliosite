@@ -32,11 +32,11 @@ $token = $_SESSION['token'];
   <meta name="format-detection" content="telephone=no">
   <!--SEO対策-->
   <!--Twitterカード-->
-	<meta property="og:url" content="https://kokitanshio.com">
+	<meta property="og:url" content="https://uk-portfolio.net/">
 	<meta property="og:title" content="UK Portfolio site">
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="上田康貴のポートフォリオサイトです">
-  <meta property="og:image" content="https://kokitanshio.com/img/portfolio/uk-portfolio-pre.png">
+  <meta property="og:image" content="https://uk-portfolio.net/img/portfolio/uk-portfolio-pre.png">
 	<meta property="og:site_name" content="UK Portfolio site">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">

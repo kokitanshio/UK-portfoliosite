@@ -4,7 +4,7 @@ $(function () {
 
   var url = location.href;
   console.log(url);
-  if (url == "https://kokitanshio.com/" || url == "http://kokitanshio.com/") { //topページのみ
+  if (url == "https://uk-portfolio.net/" || url == "http://uk-portfolio.net/") { //topページのみ
 
     $(window).on('scroll', function () { //topページのみ
     

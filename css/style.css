@@ -1225,9 +1225,13 @@ header .header-list li + li {
 }
 
 .work-wrapper {
+  padding: 80px 0 120px;
+}
+
+.work-items {
   display: flex;
   flex-wrap: wrap;
-  padding: 80px 0 120px;
+  margin-bottom: 80px;
 }
 
 .service {

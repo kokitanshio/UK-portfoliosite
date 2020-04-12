@@ -2,7 +2,7 @@ $(function () {
   var speed = 600;
     // スムーススクロール
     var url = location.href;
-  if (url == "https://kokitanshio.com/" || url == "http://kokitanshio.com/") {
+  if (url == "https://uk-portfolio.net/" || url == "http://uk-portfolio.net/") {
     
     $('a[href^="#"]').click(function(){
       var href = $(this).attr("href");

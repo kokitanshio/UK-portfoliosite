@@ -18,5 +18,7 @@
     text-align: center;
     background-color: $mainColor;
     font-weight: 900;
+    padding: 20px 0;
+    @include font(18);
   }
 }

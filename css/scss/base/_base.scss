@@ -298,6 +298,7 @@
   body{
     font-family:$mainEngFont, $mainJapFont, sans-serif;
     color: $fontMain;
+    background-color: $mainColor;
   }
   html{
     @include mq(sp){

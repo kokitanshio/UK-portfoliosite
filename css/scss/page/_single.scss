@@ -1,0 +1,112 @@
+.single{
+  margin-bottom: 150px;
+  @include mq(sp){
+    margin-bottom: 100px;
+  }
+  &-wrapper{
+    margin: 100px 0;
+    @include mq(sp){
+      margin: 50px 0;
+    }
+  }
+  &-top{
+    margin-bottom: 100px;
+    @include mq(sp){
+      margin-bottom: 50px;
+    }
+    &-title{
+      position: relative;
+      text-align: center;
+      font-family: $titleTopFont;
+      margin-bottom: 80px;
+      @include font(30);
+      @include mq(sp){
+        margin-bottom: 30px;
+      }
+      span{
+        position: absolute;
+        display: block;
+        width: 40%;
+        height: 2px;
+        left: 50%;
+        bottom: 10px;
+        transform: translateX(-50%);
+        background-color: #fff;
+        @include mq(sp){
+          width: 70%;
+        }
+      }
+    }
+    &-image{
+      text-align: center;
+      img{
+        width: 80%;
+      }
+    }
+  }
+  &-bottom{
+    display: flex;
+    width: 100%;
+    @include mq(sp){
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &-left{
+    width: 50%;
+    padding: 0 20px;
+    @include mq(sp){
+      width: 100%;
+    }
+    figure{
+      position: relative;
+      width: 100%;
+      height: 600px;
+      overflow-y: scroll;
+      @include mq(sp){
+        height: 300px;
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+  &-right{
+    width: 50%;
+    padding: 0 20px;
+    @include mq(sp){
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    table{
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      word-break: break-all;
+      tr{
+        @include mq(sp){
+          display: flex;
+          flex-direction: column;
+        }
+        th{
+          width: 30%;
+          padding: 20px 10px;
+          text-align: left;
+          vertical-align: top;
+          @include mq(sp){
+            width: 100%;
+            background-color: rgba(255,255,255,0.2);
+          }
+        }
+        td{
+          width: 70%;
+          padding: 20px 10px;
+          @include mq(sp){
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

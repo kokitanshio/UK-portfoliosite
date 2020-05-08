@@ -1,0 +1,11 @@
+.archive{
+  background-color: $mainColor;
+  &-wrapper{
+    padding: 80px 0 120px;
+  }
+  &-items{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+}

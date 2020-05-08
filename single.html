@@ -17,7 +17,7 @@
   <title>UK Portfolio site</title>
   <!--SEO対策-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="ページの内容を表す文章">
+  <meta name="description" content="上田康貴のポートフォリオサイトです">
   <meta name="robots" content="noindex,nofollow">
   <meta name="format-detection" content="telephone=no">
   <!--SEO対策-->
@@ -49,6 +49,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
   <!--ヘッダーここから-->
   <header id="header">
   <!--PC用headerここから-->
@@ -59,17 +60,17 @@
         </div>
         <!--PC用header-listここから-->
         <ul class="header-list">
-          <li class="header-list-item"><a href="/">HOME</a></li>
+          <li class="header-list-item"><a href="#top">HOME</a></li>
           <li class="header-list-item"><a href="#work">WORK</a></li>
-          <li class="header-list-item"><a href="service.html">SERVICE</a></li>
+          <li class="header-list-item"><a href="#service">SERVICE</a></li>
           <li class="header-list-item"><a href="#about">ABOUT</a></li>
-          <li class="header-list-item"><a href="contact.php">CONTACT</a></li>
+          <li class="header-list-item"><a href="#contact">CONTACT</a></li>
           <li class="header-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a></li>
         </ul>
         <!--PC用header-listここまで-->
       </nav>
-      <!--PC用headerここまで-->
     </div>
+    <!--PC用headerここまで-->
   
     <!--SP用headerここから-->
     <div class="sp-header">
@@ -88,11 +89,11 @@
         <nav>
           <!--SP用header-listここから-->
           <ul class="header-sp-list">
-            <li class="header-sp-list-item"><a href="/"><i class="fas fa-home"></i>HOME</a></li>
+            <li class="header-sp-list-item"><a href="#top"></a><i class="fas fa-home"></i>HOME</li>
             <li class="header-sp-list-item"><a href="#work"><i class="fas fa-briefcase"></i>WORK</a></li>
-            <li class="header-sp-list-item"><a href="service.html"><i class="fas fa-tasks"></i>SERVICE</a></li>
+            <li class="header-sp-list-item"><a href="#service"><i class="fas fa-tasks"></i>SERVICE</a></li>
             <li class="header-sp-list-item"><a href="#about"><i class="far fa-address-card"></i>ABOUT</a></li>
-            <li class="header-sp-list-item"><a href="contact.php"><i class="far fa-envelope"></i>CONTACT</a></li>
+            <li class="header-sp-list-item"><a href="#contact"><i class="far fa-envelope"></i>CONTACT</a></li>
             <li class="header-sp-list-item"><a href="https://twitter.com/tanshiokoki73" target="_blank" id="twitter_sp"><i class="fab fa-twitter"></i></a></li>
           </ul>
           <!--SP用header-listここまで-->
@@ -105,43 +106,99 @@
   </header>
   <!--ヘッダーここまで-->
 
-  <!--プライスここから-->
-  <section class="price">
-
-    <!--タイトルバナーここから-->
-    <div class="banner">
+    <!--シングルここから-->
+    <section id="single" class="single">
+      <!--タイトルバナーここから-->
+      <div class="banner">
+        <div class="inner">
+          <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-work">WORK</h2>
+          <div data-wow-delay="0.4s" class="wow slideInLeft banner-text banner-text-work">過去の制作物</div>
+        </div>
+      </div>
+      <!--タイトルバナーここまで-->
+  
       <div class="inner">
-        <h2  data-wow-offset="100" class="wow fadeIn banner-title banner-title-service">SERVICE</h2>
-        <div data-wow-delay="0.4s" class="wow slideInRight banner-text banner-text-service">私にできること</div>
-      </div>
-    </div>
-    <!--タイトルバナーここまで-->
-    <div class="inner">
-      <div class="price-wrapper">
-        <div class="price-wrapper-title wow fadeIn">価格表</div>
-        <table class="wow fadeInUp" data-wow-duration="3s">
-          <tbody>
-            <tr><th>コーディング(下層)</th><td>6000円〜</td></tr>
-            <tr><th>コーディング(トップ)</th><td>10000円〜</td></tr>
-            <tr><th>ランディングページ作成</th><td>30000円〜</td></tr>
-            <tr><th>ホームページ作成</th><td>50000円〜</td></tr>
-            <tr><th>WordPress導入</th><td>50000円〜</td></tr>
-          </tbody>
-        </table>
-        <div class="price-wrapper-text wow fadeIn">
-          上記金額は目安になります。<br>
-          詳細はお問い合わせ時にご確認ください。<br>
-          些細なことでも気軽にご相談ください。
-        </div>
-        <div class="btn wow fadeInUp">
-          <div class="btn-cover">ご連絡はこちら</div>
-          <a class="btn-link" href="contact.php">ご連絡はこちら</a>
-        </div>
-      </div>
-    </div> <!--inner-->
 
-  </section>
-  <!--プライスここまで-->
+        <!-- single-wrapper ここから -->
+        <div class="single-wrapper">
+          <div class="single-top">
+            <h3 class="single-top-title wow fadeInUp" data-wow-offset="100" data-wow-duration="1s">
+              WEBサイト制作
+              <span class="wow fadeIn" data-wow-delay="1s" data-wow-duration="1s" data-wow-offset="100"></span>
+            </h3>
+            <figure class="single-top-image wow fadeIn" data-wow-offset="200" data-wow-duration="2s">
+              <img src="img/portfolio/uk-portfolio-pre.png" alt="">
+            </figure>
+          </div>
+          <div class="single-bottom">
+            <div class="single-left">
+              <figure class="wow fadeIn" data-wow-offset="200" data-wow-duration="1s">
+                <img src="img/portfolio/uk-portfolio.png" alt="">
+              </figure>
+            </div>
+            <div class="single-right">
+              <table class="wow fadeIn" data-wow-offset="200" data-wow-duration="1s">
+                <tbody>
+                  <tr>
+                    <th>概要</th>
+                    <td>
+                      私のポートフォリオサイト
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>担当範囲</th>
+                    <td>
+                      ディレクション・デザイン・コーディング・WordPress
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>制作期間</th>
+                    <td>
+                      三週間
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>使用技術</th>
+                    <td>
+                      HTML/CSS/Sass/JavaScript/jQuery/PHP/WordPress/XD
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>URL</th>
+                    <td>
+                      <a href="https://uk-portfolio.net">https://uk-portfolio.net</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>特記事項</th>
+                    <td>
+                      私自身のポートフォリオサイトです。<br>
+                      訪問者に最後までみていただけるようトップページの内容量は少なめにし<br>
+                      各項目の詳細は下層ページを設けました。<br>
+                      離脱率を下げるためにアニメーションを多く取り入れ<br>
+                      スクロールを進めるほど楽しいサイトを意識しました。<br>
+                      また、PCビューでは視線の流れが左右に動くよう文字位置をばらけさせ<br>
+                      単調にならないようにしました。
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- single-wrapper ここまで -->
+        <!-- single-pagenation ここから -->
+        <div class="single-pagenation">
+          <div class="btn wow fadeInUp">
+            <div class="btn-cover">ご連絡はこちら</div>
+            <a class="btn-link" href="contact.php">ご連絡はこちら</a>
+          </div>
+        </div>
+        <!-- single-pagenation ここまで -->
+
+      </div> <!--inner-->
+    </section>
+    <!--シングルここまで-->
 
   <!--フッターここから-->
   <footer>

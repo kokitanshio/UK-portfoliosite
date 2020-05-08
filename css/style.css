@@ -330,6 +330,7 @@ img {
 body {
   font-family: "Arial", "ヒラギノ明朝 ProN", sans-serif;
   color: #ffffff;
+  background-color: #333333;
 }
 
 @media screen and (max-width: 767px) {
@@ -623,36 +624,36 @@ body {
   }
 }
 
-.work-item {
+.archive-item {
   display: block;
   margin: 10px;
   width: calc( 33% - 20px);
 }
 
 @media screen and (max-width: 1024px) {
-  .work-item {
+  .archive-item {
     width: calc( 50% - 20px);
   }
 }
 
 @media screen and (max-width: 767px) {
-  .work-item {
+  .archive-item {
     width: 100%;
     margin: 30px 10px;
   }
 }
 
-.work-item-wrapper {
+.archive-item-wrapper {
   position: relative;
   width: 100%;
 }
 
-.work-item-wrapper img {
+.archive-item-wrapper img {
   width: 100%;
   height: auto;
 }
 
-.work-item:hover .overlay {
+.archive-item:hover .overlay {
   opacity: 0.8;
   transform: scale(1);
 }
@@ -681,6 +682,9 @@ body {
   text-align: center;
   background-color: #333333;
   font-weight: 900;
+  padding: 20px 0;
+  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .btn {
@@ -1228,10 +1232,88 @@ header .header-list li + li {
   padding: 80px 0 120px;
 }
 
-.work-items {
+.work .swipers {
   display: flex;
-  flex-wrap: wrap;
   margin-bottom: 80px;
+}
+
+@media screen and (max-width: 1024px) {
+  .work .swipers {
+    flex-direction: column;
+  }
+}
+
+.swiper1 {
+  width: 75%;
+  height: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .swiper1 {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .swiper1 {
+    width: 100%;
+  }
+}
+
+.swiper1 .swiper-wrapper .swiper-slide {
+  position: relative;
+}
+
+.swiper1 .swiper-wrapper .swiper-slide span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0;
+  padding: 50px 0;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(246, 180, 131, 0.8);
+}
+
+@media screen and (max-width: 767px) {
+  .swiper1 .swiper-wrapper .swiper-slide span {
+    padding: 30px 0;
+  }
+}
+
+.swiper1 .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+
+.swiper2 {
+  width: 25%;
+  height: auto;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .swiper2 {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .swiper2 {
+    width: 100%;
+  }
+}
+
+.swiper2 .swiper-wrapper .swiper-slide {
+  opacity: 0.5;
+}
+
+.swiper2 .swiper-wrapper .swiper-slide img {
+  width: 100%;
+}
+
+.swiper2 .swiper-wrapper .swiper-slide-thumb-active {
+  opacity: 1;
 }
 
 .service {
@@ -1374,6 +1456,182 @@ header .header-list li + li {
   text-align: center;
 }
 
+.archive {
+  background-color: #333333;
+}
+
+.archive-wrapper {
+  padding: 80px 0 120px;
+}
+
+.archive-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.single {
+  margin-bottom: 150px;
+}
+
+@media screen and (max-width: 767px) {
+  .single {
+    margin-bottom: 100px;
+  }
+}
+
+.single-wrapper {
+  margin: 100px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .single-wrapper {
+    margin: 50px 0;
+  }
+}
+
+.single-top {
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  .single-top {
+    margin-bottom: 50px;
+  }
+}
+
+.single-top-title {
+  position: relative;
+  text-align: center;
+  font-family: "凸版文久見出しゴシック";
+  margin-bottom: 80px;
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+
+@media screen and (max-width: 767px) {
+  .single-top-title {
+    margin-bottom: 30px;
+  }
+}
+
+.single-top-title span {
+  position: absolute;
+  display: block;
+  width: 40%;
+  height: 2px;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .single-top-title span {
+    width: 70%;
+  }
+}
+
+.single-top-image {
+  text-align: center;
+}
+
+.single-top-image img {
+  width: 80%;
+}
+
+.single-bottom {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .single-bottom {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.single-left {
+  width: 50%;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .single-left {
+    width: 100%;
+  }
+}
+
+.single-left figure {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 767px) {
+  .single-left figure {
+    height: 300px;
+  }
+}
+
+.single-left figure img {
+  width: 100%;
+}
+
+.single-right {
+  width: 50%;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .single-right {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.single-right table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  word-break: break-all;
+}
+
+@media screen and (max-width: 767px) {
+  .single-right table tr {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.single-right table tr th {
+  width: 30%;
+  padding: 20px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 767px) {
+  .single-right table tr th {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.single-right table tr td {
+  width: 70%;
+  padding: 20px 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .single-right table tr td {
+    width: 100%;
+  }
+}
+
 .contact {
   background-color: #333333;
   padding-bottom: 100px;
@@ -1476,13 +1734,13 @@ footer .sns-container i:hover {
   transform: rotate(10deg);
   background-color: #cccccc;
   width: 2000px;
-  height: 250px;
+  height: 300px;
 }
 
 @media screen and (max-width: 767px) {
   .price::before {
     transform: rotate(0);
-    height: 280px;
+    height: 320px;
     top: 200px;
   }
 }
@@ -1520,14 +1778,28 @@ footer .sns-container i:hover {
 }
 
 .price-wrapper table tr th {
+  width: 33%;
   padding-left: 10px;
   background-color: #f6b483;
   border: 1px solid #555;
 }
 
+@media screen and (max-width: 767px) {
+  .price-wrapper table tr th {
+    width: 45%;
+  }
+}
+
 .price-wrapper table tr td {
+  width: 67%;
   padding-left: 10px;
   border: 1px solid #555;
+}
+
+@media screen and (max-width: 767px) {
+  .price-wrapper table tr td {
+    width: 55%;
+  }
 }
 
 .form {

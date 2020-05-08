@@ -3,9 +3,82 @@
   &-wrapper{
     padding: 80px 0 120px;
   }
-  &-items{
+  .swipers{
     display: flex;
-    flex-wrap: wrap;
     margin-bottom: 80px;
+    @include mq(){
+      flex-direction: column;
+    }
   }
 }
+.swiper1{
+  width: 75%;
+  height: auto;
+  @include mq(){
+    width: 80%;
+  }
+  @include mq(sp){
+    width: 100%;
+  }
+  .swiper-wrapper{
+    .swiper-slide{
+      position: relative;
+      span{
+        position: absolute;
+        display: block;
+        width: 100%;
+        bottom: 0;
+        padding: 50px 0;
+        text-align: center;
+        font-weight: bold;
+        background-color: rgba(246, 180, 131, 0.8);
+        @include mq(sp){
+          padding: 30px 0;
+        }
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.swiper2{
+  width: 25%;
+  height: auto;
+  margin-left: 10px;
+  @include mq(){
+    width: 80%;
+    margin: 0 auto;
+  }
+  @include mq(sp){
+    width: 100%;
+  }
+  .swiper-wrapper{
+    .swiper-slide{
+      opacity: 0.5;
+      img{
+        width: 100%;
+      }
+    }
+    .swiper-slide-thumb-active{
+      opacity: 1;
+    }
+  }
+}
+
+// .thumb-list{
+//   width: 80%;
+//   display: flex;
+//   justify-content: center;
+//   .thumb-item{
+//     width: 30%;
+//     .thumb-link{
+//       display: block;
+//       width: 100%;
+//       img{
+//         width: 100%;
+//       }
+//     }
+//   }
+// }

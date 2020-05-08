@@ -22,10 +22,6 @@ header{ //PC用header
   }
   .header-list{
     display: flex;
-    //当初はheaderをのこして中のlistをSPで非表示にしてトグルを表示させようとしたがheader高さまでスクロール後に表示させるならheaderそのものを残す必要がないため消すことにした。
-    // @include mq(sp){
-    //   display: none;
-    // }
     li{
       @include trans;
       &:hover{

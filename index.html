@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165394154-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-165394154-1');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UK Portfolio site</title>
   <!--SEO対策-->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="ページの内容を表す文章">
+  <meta name="description" content="上田康貴のポートフォリオサイトです">
   <meta name="robots" content="noindex,nofollow">
   <meta name="format-detection" content="telephone=no">
   <!--SEO対策-->
@@ -32,6 +43,8 @@
   <link href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" rel="stylesheet">
   <!--wow-->
   <link rel="stylesheet" href="css/animate.css">
+  <!-- swiper -->
+  <link rel="stylesheet" href="css/swiper.min.css">
   <!--googlefont-->
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Kaushan+Script&display=swap" rel="stylesheet">
   <!--stylesheet-->
@@ -89,8 +102,8 @@
         </ul>
         <!--PC用header-listここまで-->
       </nav>
-      <!--PC用headerここまで-->
     </div>
+    <!--PC用headerここまで-->
   
     <!--SP用headerここから-->
     <div class="sp-header">
@@ -140,104 +153,63 @@
       <div class="inner">
         <div class="work-wrapper">
 
-          <div class="work-items">
+          <!-- swiper ここから -->
+          <div class="swipers wow fadeInUp" data-wow-offset="200">
+            <!-- main-swiper ここから -->
+            <div class="swiper-container swiper1">
+              <div class="swiper-wrapper">
+  
+                <!-- swiper-item ここから -->
+                <div class="swiper-slide">
+                  <a href="">
+                    <img src="img/portfolio/uk-portfolio-pre.png" alt="">
+                  </a>
+                  <span>WEBサイト制作</span>
+                </div>
+                <!-- swiper-item ここまで -->
+  
+                <!-- swiper-item ここから -->
+                <div class="swiper-slide">
+                  <a href="">
+                    <img src="img/portfolio/my-theme-blog-pre.png" alt="">
+                  </a>
+                  <span>ブログサイト制作</span>
+                </div>
+                <!-- swiper-item ここまで -->
+  
+                <!-- swiper-item ここから -->
+                <div class="swiper-slide">
+                  <a href="">
+                    <img src="img/portfolio/daytora2nd-pre.png" alt="">
+                  </a>
+                  <span>LPコーディング</span>
+                </div>
+                <!-- swiper-item ここまで -->
+  
+              </div>
+            </div>
+            <!-- main-swiper ここまで -->
+            <!-- thumb-swiper ここから -->
+            <div class="swiper-container swiper2">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="img/portfolio/uk-portfolio-pre.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/portfolio/my-theme-blog-pre.png" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/portfolio/daytora2nd-pre.png" alt="">
+                </div>
+              </div>
+            </div>
+            <!-- thumb-swiper ここまで -->
 
-            <!--wrok-itemここから-->
-            <a href="img/portfolio/uk-portfolio.png" class="wow fadeInUp work-item" data-wow-offset="200">
-              <div class="work-item-wrapper">
-                <img src="img/portfolio/uk-portfolio-pre.png" alt="自作ポートフォリオサイトの画像">
-                <!--overlayここから-->
-                <div class="overlay">
-                  <p class="overlay-text">自作ポートフォリオサイト</p>
-                </div>
-                <!--overlayここまで-->
-              </div>
-            </a>
-            <!--wrok-itemここまで-->
-            
-            <!--wrok-itemここから-->
-            <a href="http://tanshiochan.xsrv.jp/" class="wow fadeInUp work-item" data-wow-offset="200">
-              <div class="work-item-wrapper">
-                <img src="img/portfolio/my-theme-blog-pre.png" alt="WordPress自作テーマブログサイトの画像">
-                <!--overlayここから-->
-                <div class="overlay">
-                  <p class="overlay-text">WordPress自作テーマブログサイト</p>
-                </div>
-                <!--overlayここまで-->
-              </div>
-            </a>
-            <!--wrok-itemここまで-->
-  
-            <!--wrok-itemここから-->
-            <a href="img/portfolio/isara.png" class="wow fadeInUp work-item" data-wow-offset="200">
-              <div class="work-item-wrapper">
-                <img src="img/portfolio/isara-pre.png" alt="iSara模写の画像">
-                <!--overlayここから-->
-                <div class="overlay">
-                  <p class="overlay-text">iSara模写</p>
-                </div>
-                <!--overlayここまで-->
-              </div>
-            </a>
-            <!--wrok-itemここまで-->
-  
-            <!--wrok-itemここから-->
-            <a href="img/portfolio/daitora2nd.png" class="wow fadeInUp work-item" data-wow-offset="200">
-              <div class="work-item-wrapper">
-                <img src="img/portfolio/daitora2nd-pre.png" alt="デイトラ2nd最終課題の画像">
-                <!--overlayここから-->
-                <div class="overlay">
-                  <p class="overlay-text">デイトラ2nd最終課題</p>
-                </div>
-                <!--overlayここまで-->
-              </div>
-            </a>
-            <!--wrok-itemここまで-->
-  
-            <!--wrok-itemここから-->
-            <a href="img/portfolio/portfolio.png" class="wow fadeInUp work-item" data-wow-offset="200">
-              <div class="work-item-wrapper">
-                <img src="img/portfolio/portfolio-pre.png" alt="テンプレートポートフォリオサイトの画像">
-                <!--overlayここから-->
-                <div class="overlay">
-                  <p class="overlay-text">テンプレートポートフォリオサイト</p>
-                </div>
-                <!--overlayここまで-->
-              </div>
-            </a>
-            <!--wrok-itemここまで-->
-  
-            <!--wrok-itemここから-->
-            <a href="img/portfolio/airbnb.png" class="wow fadeInUp work-item" data-wow-offset="200">
-              <div class="work-item-wrapper">
-                <img src="img/portfolio/airbnb-pre.png" alt="Airbnb模写の画像">
-                <!--overlayここから-->
-                <div class="overlay">
-                  <p class="overlay-text">Airbnb模写</p>
-                </div>
-                <!--overlayここまで-->
-              </div>
-            </a>
-            <!--wrok-itemここまで-->
-  
-            <!--wrok-itemここから-->
-            <a href="img/portfolio/Nuno.png" class="wow fadeInUp work-item" data-wow-offset="200">
-              <div class="work-item-wrapper">
-                <img src="img/portfolio/Nuno-pre.png" alt="Nuno模写の画像">
-                <!--overlayここから-->
-                <div class="overlay">
-                  <p class="overlay-text">Nuno模写</p>
-                </div>
-                <!--overlayここまで-->
-              </div>
-            </a>
-            <!--wrok-itemここまで-->
-      
-          </div> <!--work-items-->
-
+          </div>
+          <!-- swiper ここまで -->
           <div class="btn">
             <div class="btn-cover">全ての制作物</div>
-            <a class="btn-link" href="https://drive.google.com/open?id=183DG8GIgbt1Q0Ymc58plObmTm5GArCCz">全ての制作物</a>
+            <a class="btn-link" href="archive.html">全ての制作物</a>
           </div>
 
         </div> <!--work-wrapper-->
@@ -423,6 +395,9 @@
   <!--wow-->
   <script src="js/wow.min.js"></script>
   <script src="js/wow_start.js"></script>
+  <!-- swiper -->
+  <script src="js/swiper.min.js"></script>
+  <script src="js/swiper-start.js"></script>
   <!--ローディングとtop-logoのJS-->
   <script src="js/load.js"></script>
   <!--headerのJS-->

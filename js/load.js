@@ -1,4 +1,4 @@
-$(function () {
+$(function loadset() {
   $('body').css({ 'overflow': 'hidden' }); //bodyをスクロール不可にしておく
   $('#logoSb').addClass('logo_back'); //subtitleを下にずらし消しておく
   $('#logoText').addClass('logo_back'); //textを下にずらし消しておく

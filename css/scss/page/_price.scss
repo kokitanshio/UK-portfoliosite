@@ -11,10 +11,10 @@
     transform: rotate(10deg);
     background-color: $subColor;
     width: 2000px;
-    height: 250px;
+    height: 300px;
     @include mq(sp){
       transform: rotate(0);
-      height: 280px;
+      height: 320px;
       top: 200px;
     }
   }
@@ -40,13 +40,21 @@
       tr{
         height: 50px;
         th{
+          width: 33%;
           padding-left: 10px;
           background-color: $keyColor;
           border: 1px solid $fontSub;
+          @include mq(sp){
+            width: 45%;
+          }
         }
         td{
+          width: 67%;
           padding-left: 10px;
           border: 1px solid $fontSub;
+          @include mq(sp){
+            width: 55%;
+          }
         }
       }
     }
